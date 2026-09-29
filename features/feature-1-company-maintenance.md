@@ -149,11 +149,11 @@
 
 
 
-### US-1.3 — Delete company
+### US-1.3 — Deactivate company
 
 
 
-#### Scenario: Company is deleted
+#### Scenario: Company is deactivate
 
 - **Given** a company exists
 - **When** the manager deletes the company
@@ -161,7 +161,7 @@
 
 
 
-#### Scenario: Unknown company cannot be deleted
+#### Scenario: Unknown company cannot be deactivate
 
 - **Given** the company does not exist
 - **When** the manager tries to delete it
