@@ -4,7 +4,7 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Maintain individual item information.
-**Depends on:** Feature 5 — Supplier Maintenance
+**Depends on:** [Feature 5 — Supplier Maintenance](feature-5-supplier-maintenance.md)
 
 ---
 ## User Stories
