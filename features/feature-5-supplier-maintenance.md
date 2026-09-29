@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Maintain supplier information.
-**Depends on:** Feature 1 — Company Maintenance
+**Depends on:** [Feature 1 — Company Maintenance](Feature 1 — Company Maintenance.md)
 
 ---
 ## User Stories
