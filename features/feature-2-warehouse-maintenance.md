@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-20
 **Input:** Maintain warehouse information and locations.  
-**Depends on :** Feature 1 — Company Maintenance
+**Depends on:** [Feature 1 — Company Maintenance](feature-1-company-maintenance.md)
 
 ---
 
