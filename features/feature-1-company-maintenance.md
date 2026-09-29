@@ -29,10 +29,10 @@
 **Independent test:** Edit company information and verify that the change is saved.
 **Acceptance Scenarios:** see ###  US-1.2 under Gherkin AC
 
-### US-1.3: Delete company
+### US-1.3: Deactivate company
 
 **As a** company manager
-**I want to** delete company information
+**I want to** deactivate company information
 **So that** incorrect company information can be removed.
 **Priority:** P1
 **Independent test:** Delete a company and verify that it no longer exists.
