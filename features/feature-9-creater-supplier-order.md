@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-26
 **Input:** Create supplier orders based on inventory needs.
-**Depends on:** Feature 3 — Inventory Maintenance; Feature 4 — Item Maintenance; Feature 5 — Supplier Maintenance
+**Depends on:** [Feature 3 — Inventory Maintenance](feature-3-inventory-maintenance.md); [Feature 4 — Item Maintenance](feature-4-item-maintenance.md); [Feature 5 — Supplier Maintenance](feature-5-supplier-maintenance.md)
 
 ---
 
