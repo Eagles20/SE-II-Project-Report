@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Receive customer orders for products from the warehouse.
-**Related:** Feature 6 — Customer Maintenance; Feature 8 — Customer Order Form Maintenance
+**Depends on:** Feature 6 — Customer Maintenance; Feature 8 — Customer Order Form Maintenance
 
 ---
 

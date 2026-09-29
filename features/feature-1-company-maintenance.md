@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-20
 **Input:** Maintain company information for the Warehouse system.
-**Related :** None
+**Depends on :** None
 
 ---
 
@@ -18,7 +18,7 @@
 **So that** the company can be maintained in the system.
 **Priority:** P1
 **Independent test:** Add a company and verify that it is saved.
-**Acceptance Scenarios:** see US-1.1 under Gherkin AC
+**Acceptance Scenarios:** see ### US-1.1 under Gherkin AC
 
 ### US-1.2: Edit company
 
@@ -80,13 +80,13 @@
 ### Company
 
 
-| Field      | Type   | Rules            |
-| ---------- | ------ | ---------------- |
-| company_id | String | Required; unique |
-| name       | String | Required         |
-| address    | String | Required         |
+| Field      | Type    | Rules            |
+| ---------- | ------- | ---------------- |
+| company_id | String  | Required; unique |
+| name       | String  | Required         |
+| address    | String  | Required         |
 | phone      | String | Required         |
-| email      | String | Optional         |
+| email      | String  | Optional         |
 
 
 ---

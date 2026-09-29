@@ -4,8 +4,9 @@
 **Status:** Draft  
 **Created:** 2026-09-22
 **Input:** Maintain the quantity of items in each warehouse.  
-**Related:** Feature 2 — Warehouse Maintenance; Feature 4 — Item Maintenance
+**Depends on:** Feature 2 — Warehouse Maintenance; Feature 4 — Item Maintenance
 
+---
 ## User Stories
 
 ### US-3.1: Add inventory
@@ -44,6 +45,7 @@
 **Independent test:** Open inventory and verify the current quantity is displayed.
 **Acceptance Scenarios:** see ### US-3.4 under Gherkin AC
 
+---
 ## Functional Requirements
 
 - **FR-001:** The system MUST maintain inventory quantities.
@@ -57,6 +59,7 @@
 - **FR-009:** The system MUST allow authorized users to view inventory.
 - **FR-010:** An item and warehouse combination MUST identify one inventory record.
 
+---
 
 
 ## Key Entities
@@ -66,6 +69,7 @@
 - **Warehouse** — Physical location where the inventory is stored.
 
 
+---
 
 ## Initial Data Model
 
@@ -82,7 +86,7 @@
 | quantity_on_hand | Integer             | Required; zero or greater |
 
 
-
+---
 
 ## Gherkin AC
 
