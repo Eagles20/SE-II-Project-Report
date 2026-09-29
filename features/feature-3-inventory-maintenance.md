@@ -1,10 +1,12 @@
 # Feature: Inventory Maintenance
+
 **Feature ID:** 3  
 **Branch pattern:** `feature/3-inventory-maintenance`  
 **Status:** Draft  
 **Created:** 2026-09-22
 **Input:** Maintain the quantity of items in each warehouse.  
 **Depends on:** Feature 2 — Warehouse Maintenance; Feature 4 — Item Maintenance
+
 
 ---
 ## User Stories
