@@ -5,8 +5,7 @@
 **Status:** Draft  
 **Created:** 2026-09-22
 **Input:** Maintain the quantity of items in each warehouse.  
-**Depends on:** Feature 2 — Warehouse Maintenance; Feature 4 — Item Maintenance
-
+**Depends on:** [Feature 2 — Warehouse Maintenance](feature-2-warehouse-maintenance.md); [Feature 4 — Item Maintenance](feature-4-item-maintenance.md)
 
 ---
 ## User Stories
