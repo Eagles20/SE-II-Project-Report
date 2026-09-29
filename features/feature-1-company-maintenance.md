@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-20
 **Input:** Maintain company information for the Warehouse system.
-**Depends on :** None
+**Depends on:** None
 
 ---
 
