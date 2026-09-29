@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Maintain customer order forms used to receive orders from customers.
-**Related:** Feature 4 — Item Maintenance; Feature 6 — Customer Maintenance
+**Depends on:** Feature 4 — Item Maintenance; Feature 6 — Customer Maintenance
 
 ---
 
