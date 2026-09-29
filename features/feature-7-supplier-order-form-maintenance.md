@@ -5,7 +5,7 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Maintain forms used to order products from suppliers.
-**Depends on:** Feature 4 — Item Maintenance; Feature 5 — Supplier Maintenance
+**Depends on:** [Feature 4 — Item Maintenance](feature-4-item-maintenance.md); [Feature 5 — Supplier Maintenance](feature-5-supplier-maintenance.md)
 
 ---
 ## User Stories
