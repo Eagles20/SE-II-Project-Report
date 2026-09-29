@@ -4,7 +4,8 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Receive products ordered from suppliers and compare ordered and received quantities.
-**Depends on:** [Feature 9 — Create Supplier Order](Feature 9 — Create Supplier Order)
+**Depends on:** [Feature 9 — Create Supplier Order](feature-9-create-supplier-order.md)
+
 
 ---
 ## User Stories
