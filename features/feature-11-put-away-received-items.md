@@ -4,7 +4,7 @@
 **Status:** Draft
 **Created:** 2026-09-25
 **Input:** Put received products into a warehouse location.
-**Depends on:** Feature 10 — Receive Supplier Order; Feature 2 — Warehouse Maintenance
+**Depends on:** [Feature 10 — Receive Supplier Order](feature-10-receive-supplier-order.md); [Feature 2 — Warehouse Maintenance](feature-2-warehouse-maintenance.md)
 
 ---
 ## User Stories
