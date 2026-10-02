@@ -1,30 +1,49 @@
-# Feature: Church Member System
+# Feature: User- authentication management
 **Feature ID:** 1 
-**Branch pattern:** `feature/1-number-registration`  
+**Branch pattern:** `feature/1-user& authentication-management`  
 **Status:** Draft  
 **Created:** 2026-09-10  
-**Input:** This feature allows church staff to add new members and keep their information in the church memebr system.  
+**Input:** This feature lets church staff login, lets administrators manage user acconts, and lets staff plan each service: what service will cover and who will preach.
 **Depends on:** None 
+
 ---
 
 ## User Stories
 
-### US-N.1: Register a new memeber
-**As a** Church administrator   
-**So that** the church can keep an organized record of its members.
+### US-N.1: Log in 
+**As a** Church stuff user 
+**I want to** log in with my username and password
+**So that** only approved people can user the church system .
 
 **Priority:** P1  
-**Independent test:** The administrator can enter valid member information and successfully save the member.  
+**Independent test:** A user with the right username and password logs in; a wrong password is rejected.  
 **Acceptance scenarios:** see ### US-N.1 under Acceptance Criteria
 
-### US-N.2: Save member information
-**As a** church administrator 
-**I want to** save a member's information  
-**So that** the information can be viewed and managed later.
+### US-N.2: Stay logged in during a session
+**As a**logged-in user 
+**I want to**I Want to stay logged in while i work   
+**So that** i do not have to log in again for every action, and my account stays safe if i leave it.
 
 **Priority:** P1  
-**Independent test:** After registering a member, the administrator can find the member and view the saved information. 
+**Independent test:** The user stays logged in while active, and must log in again after being inactive for too long.  
 **Acceptance scenarios:** see ### US-N.2 under Acceptance Criteria
+
+### US-N.3: Log out
+**As a** logged-in user
+**I want to** log out
+**So that** no one else can use my account on a shared device
+**Priority:** P1
+**Independent test:** After logging out, the user cannot open protected pages without logging in again.
+**Acceptance scenarios:** see ### US-N.3 under Acceptance Criteria
+
+### US-N.4: Create a user account
+**As a** church administrator
+**I want to** Create an account for staff member
+**So that** they can log in and use the system
+**Priority:** P1
+**Independent test:** The administrator creates an account, and the new user can log in with it.
+**Acceptance scenarios:** see ### US-N.4 under Acceptance Criteria
+
 
 ---
 
