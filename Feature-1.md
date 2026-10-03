@@ -1,4 +1,4 @@
-# Feature: User- authentication management
+# Feature: User Authentication and Management
 **Feature ID:** 1 
 **Branch pattern:** `feature/1-user& authentication-management`  
 **Status:** Draft  
