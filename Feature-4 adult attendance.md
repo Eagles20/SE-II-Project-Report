@@ -1,15 +1,10 @@
 # Feature: Adult Attendance
 
 **Feature ID:** 4
-
 **Branch pattern:** `feature/4-adult-attendance`
-
 **Status:** Draft
-
 **Created:** 2026-10-02
-
 **Input:** Church staff can record which adult members came to each service.
-
 **Depends on:** [Feature-1 user authentication and management](<Feature-1 user authentication and management.md>), [Feature-2 member management](<Feature-2 member management.md>)
 
 ---
@@ -18,67 +13,47 @@
 
 ### US-4.1: Choose a service
 **As a** church admin
-
 **I want to** choose a service from the list
-
 **So that** I can record attendance for it.
 
 **Priority:** P1
-
 **Independent test:** The admin opens the list of services, chooses one, and sees its attendance page.
-
 **Acceptance scenarios:** see ### US-4.1 under Gherkin AC
 
 ### US-4.2: Mark an adult present
 **As a** church admin
-
 **I want to** mark an adult member as present for a service
-
 **So that** the church knows who came.
 
 **Priority:** P1
-
 **Independent test:** The admin marks a member present and the member shows in the attendance list.
-
 **Acceptance scenarios:** see ### US-4.2 under Gherkin AC
 
 ### US-4.3: See the attendance of a service
 **As a** church admin
-
 **I want to** see who came to a service and how many
-
 **So that** I can make a report.
 
 **Priority:** P1
-
 **Independent test:** The admin opens a service and sees the list and the total.
-
 **Acceptance scenarios:** see ### US-4.3 under Gherkin AC
 
 ### US-4.4: Fix an attendance mistake
 **As a** church admin
-
 **I want to** remove a wrong attendance entry
-
 **So that** the records stay correct.
 
 **Priority:** P2
-
 **Independent test:** The admin removes an entry and the member is not in the list anymore.
-
 **Acceptance scenarios:** see ### US-4.4 under Gherkin AC
 
 ### US-4.5: See a member's attendance history
 **As a** church admin
-
 **I want to** see the services a member came to
-
 **So that** I can follow up with members who are often absent.
 
 **Priority:** P3
-
 **Independent test:** The admin opens a member and sees the services the member came to.
-
 **Acceptance scenarios:** see ### US-4.5 under Gherkin AC
 
 ---
@@ -97,7 +72,7 @@
 
 ## Initial Data Model
 
-Services come from Feature 1. The system keeps one more thing:
+ The system keeps one more thing:
 
 - **Adult attendance:** which service, which member, and when it was saved. A member can be saved only once for each service.
 
