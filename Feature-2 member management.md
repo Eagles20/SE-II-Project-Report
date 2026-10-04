@@ -1,15 +1,9 @@
 # Feature: Member Management
-
 **Feature ID:** 2
-
 **Branch pattern:** `feature/2-member-management`
-
 **Status:** Draft
-
 **Created:** 2026-10-02
-
 **Input:** Church staff can add members and keep their information in the church member system.
-
 **Depends on:** [Feature-1 user authentication and management](<Feature-1 user authentication and management.md>)
 
 ---
@@ -18,67 +12,47 @@
 
 ### US-2.1: Register a new member
 **As a** church admin
-
 **I want to** register a new member
-
 **So that** the church has a clear list of its members.
 
 **Priority:** P1
-
 **Independent test:** The admin enters the member's information and saves the member.
-
 **Acceptance scenarios:** see ### US-2.1 under Gherkin AC
 
 ### US-2.2: Save member information
 **As a** church admin
-
 **I want to** save a member's information
-
 **So that** I can see and manage it later.
 
 **Priority:** P1
-
 **Independent test:** After registering a member, the admin can find the member and see the saved information.
-
 **Acceptance scenarios:** see ### US-2.2 under Gherkin AC
 
 ### US-2.3: View and search members
 **As a** church admin
-
 **I want to** see the list of members, search by name, and open a member's details
-
 **So that** I can find information quickly.
 
 **Priority:** P1
-
 **Independent test:** The admin searches for a member by name and opens the details.
-
 **Acceptance scenarios:** see ### US-2.3 under Gherkin AC
 
 ### US-2.4: Edit member information
 **As a** church admin
-
 **I want to** change a member's information
-
 **So that** the records stay correct.
 
 **Priority:** P2
-
 **Independent test:** The admin changes a phone number, saves, and sees the new number.
-
 **Acceptance scenarios:** see ### US-2.4 under Gherkin AC
 
 ### US-2.5: Delete a member
 **As a** church admin
-
 **I want to** delete a member
-
 **So that** people who are not members anymore are removed from the list.
 
 **Priority:** P2
-
 **Independent test:** The admin deletes a member and the member is not in the list anymore.
-
 **Acceptance scenarios:** see ### US-2.5 under Gherkin AC
 
 ---
