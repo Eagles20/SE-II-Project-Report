@@ -1,15 +1,9 @@
 # Feature: Language Selection
-
 **Feature ID:** 7
-
 **Branch pattern:** `feature/7-language-selection`
-
 **Status:** Draft
-
 **Created:** 2026-10-02
-
 **Input:** People can use the church member system in English or Spanish.
-
 **Depends on:** [Feature-1 user authentication and management](<Feature-1 user authentication and management.md>)
 
 ---
@@ -18,41 +12,29 @@
 
 ### US-7.1: Choose a language
 **As a** user
-
 **I want to** choose English or Spanish
-
 **So that** I can use the system in the language I know best.
 
 **Priority:** P1
-
 **Independent test:** The user picks a language and the system shows its text in that language.
-
 **Acceptance scenarios:** see ### US-7.1 under Gherkin AC
 
 ### US-7.2: Remember my language
 **As a** logged-in user
-
 **I want to** have the system remember my language
-
 **So that** I do not need to choose it every time I log in.
 
-**Priority:** P2
-
+**Priority:** P1
 **Independent test:** The user picks Spanish, logs out, logs in again, and the system is still in Spanish.
-
 **Acceptance scenarios:** see ### US-7.2 under Gherkin AC
 
 ### US-7.3: Start in a default language
 **As a** new user
-
 **I want to** have the system start in a default language
-
 **So that** I can use it right away.
 
-**Priority:** P3
-
+**Priority:** P1
 **Independent test:** A user who never chose a language sees the system in English.
-
 **Acceptance scenarios:** see ### US-7.3 under Gherkin AC
 
 ---
@@ -72,7 +54,7 @@
 
 The system keeps two small things:
 
-- **Preferred language:** one more field for each user (Feature 1): English (`en`) or Spanish (`es`). The default is English.
+- **Preferred language:** one more field for each user : English (`en`) or Spanish (`es`). The default is English.
 - **Language texts:** the English and Spanish version of each menu, label, button and message. These are app settings, not a database table.
 
 ---
