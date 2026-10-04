@@ -1,15 +1,9 @@
 # Feature: Ministry Children
-
 **Feature ID:** 3
-
 **Branch pattern:** `feature/3-ministry-children`
-
 **Status:** Draft
-
 **Created:** 2026-10-02
-
 **Input:** Church staff can put children in ministry groups and link each child to a guardian.
-
 **Depends on:** [Feature-1 user authentication and management](<Feature-1 user authentication and management.md>), [Feature-2 member management](<Feature-2 member management.md>)
 
 ---
@@ -18,67 +12,47 @@
 
 ### US-3.1: Create a ministry group
 **As a** church admin
-
 **I want to** create a children's ministry group with an age range
-
 **So that** children are in groups by age.
 
 **Priority:** P1
-
 **Independent test:** The admin creates a group and it shows in the list of groups.
-
 **Acceptance scenarios:** see ### US-3.1 under Gherkin AC
 
 ### US-3.2: Register a child
 **As a** church admin
-
 **I want to** register a child and link the child to a guardian who is a member
-
 **So that** the church knows who is responsible for each child.
 
 **Priority:** P1
-
 **Independent test:** The admin registers a child with a guardian and the child shows in the children list.
-
 **Acceptance scenarios:** see ### US-3.2 under Gherkin AC
 
 ### US-3.3: Put a child in a group
 **As a** church admin
-
 **I want to** put a child in a ministry group
-
 **So that** the child is in the right class.
 
 **Priority:** P1
-
 **Independent test:** After this, the child shows in the class list of the group.
-
 **Acceptance scenarios:** see ### US-3.3 under Gherkin AC
 
 ### US-3.4: See a class list
 **As a** church admin
-
 **I want to** see the children in a ministry group
-
 **So that** teachers know who is in their class.
 
 **Priority:** P1
-
 **Independent test:** The admin opens a group and sees all its children.
-
 **Acceptance scenarios:** see ### US-3.4 under Gherkin AC
 
 ### US-3.5: Edit or remove a child or group
 **As a** church admin
-
 **I want to** change a child's information, move a child to another group, or remove a child or a group
-
 **So that** the records stay correct.
 
 **Priority:** P2
-
 **Independent test:** The admin moves a child to another group and both class lists change.
-
 **Acceptance scenarios:** see ### US-3.5 under Gherkin AC
 
 ---
