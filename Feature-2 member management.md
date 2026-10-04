@@ -79,7 +79,6 @@ The system keeps one thing:
 
 - **Members:** first name and last name (required), phone, email and address (optional).
 
-Other features use members: the preacher (Feature 1), the guardian of a child (Feature 3), attendance (Feature 4), and drivers and ride requests (Feature 6).
 
 ---
 
