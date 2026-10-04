@@ -1,15 +1,9 @@
 # Feature: Children Attendance
-
 **Feature ID:** 5
-
 **Branch pattern:** `feature/5-children-attendance`
-
 **Status:** Draft
-
 **Created:** 2026-10-02
-
 **Input:** Church staff can record which children came to each service, by ministry group.
-
 **Depends on:** [Feature-1 user authentication and management](<Feature-1 user authentication and management.md>), [Feature-3 ministry children](<Feature-3 ministry children.md>)
 
 ---
@@ -18,54 +12,38 @@
 
 ### US-5.1: Check in a child
 **As a** children's ministry teacher
-
 **I want to** check in a child for a service
-
 **So that** the church knows which children are here.
 
 **Priority:** P1
-
 **Independent test:** The teacher checks in a child and the child shows in the list of the service.
-
 **Acceptance scenarios:** see ### US-5.1 under Gherkin AC
 
 ### US-5.2: See attendance by group
 **As a** children's ministry teacher
-
 **I want to** see which children of my group are here
-
 **So that** I know who I am responsible for.
 
 **Priority:** P1
-
 **Independent test:** The teacher opens a group for a service and sees who is here and who is not.
-
 **Acceptance scenarios:** see ### US-5.2 under Gherkin AC
 
 ### US-5.3: Fix a check-in mistake
 **As a** church admin
-
 **I want to** remove a wrong check-in
-
 **So that** the records stay correct.
 
 **Priority:** P2
-
 **Independent test:** The admin removes a check-in and the child is not shown as here anymore.
-
 **Acceptance scenarios:** see ### US-5.3 under Gherkin AC
 
 ### US-5.4: See a child's attendance history
 **As a** church admin
-
 **I want to** see the services a child came to
-
 **So that** I can share it with the guardian or follow up.
 
 **Priority:** P3
-
 **Independent test:** The admin opens a child and sees the services the child came to.
-
 **Acceptance scenarios:** see ### US-5.4 under Gherkin AC
 
 ---
@@ -85,7 +63,7 @@
 
 ## Initial Data Model
 
-Services come from Feature 1 and children come from Feature 3. The system keeps one more thing:
+ The system keeps one more thing:
 
 - **Children attendance:** which service, which child, the child's group at check-in, and the check-in time. A child can be checked in only once for each service.
 
