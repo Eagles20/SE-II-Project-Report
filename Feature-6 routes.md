@@ -1,15 +1,9 @@
 # Feature: Routes
-
 **Feature ID:** 6
-
 **Branch pattern:** `feature/6-routes`
-
 **Status:** Draft
-
 **Created:** 2026-10-02
-
 **Input:** Church staff can record who needs a ride to church, see the pickup address and needs, and make routes for drivers.
-
 **Depends on:** [Feature-1 user authentication and management](<Feature-1 user authentication and management.md>), [Feature-2 member management](<Feature-2 member management.md>)
 
 ---
@@ -18,93 +12,65 @@
 
 ### US-6.1: Ask for a ride for a member
 **As a** church admin
-
 **I want to** record that a member needs a ride, with the pickup address and any special needs
-
 **So that** the church knows who needs a ride and where to go.
 
 **Priority:** P1
-
 **Independent test:** The admin creates a ride request and it shows in the list for the service.
-
 **Acceptance scenarios:** see ### US-6.1 under Gherkin AC
 
 ### US-6.2: See who needs a ride
 **As a** church admin
-
 **I want to** see all ride requests for a service with address, phone, passengers and notes
-
 **So that** I know everyone who needs a ride.
 
 **Priority:** P1
-
 **Independent test:** The admin opens a service and sees each request with its details.
-
 **Acceptance scenarios:** see ### US-6.2 under Gherkin AC
 
 ### US-6.3: Create a route and choose a driver
 **As a** church admin
-
 **I want to** create a route for a service, choose a driver and add ride requests
-
 **So that** every person who needs a ride has a driver.
 
 **Priority:** P1
-
 **Independent test:** The admin creates a route with a driver and adds requests to it.
-
 **Acceptance scenarios:** see ### US-6.3 under Gherkin AC
 
 ### US-6.4: Order the stops and see the route
 **As a** driver
-
 **I want to** see the stops of my route in order, with address, phone, passengers and notes
-
 **So that** I know where to go and who to pick up.
 
 **Priority:** P1
-
 **Independent test:** The admin sets the order of the stops and the route shows them in that order.
-
 **Acceptance scenarios:** see ### US-6.4 under Gherkin AC
 
 ### US-6.5: Update a pickup
 **As a** driver
-
 **I want to** mark a stop as picked up, not found or cancelled
-
 **So that** everyone knows who still needs a ride.
 
 **Priority:** P2
-
 **Independent test:** The user marks a stop as picked up and its status changes.
-
 **Acceptance scenarios:** see ### US-6.5 under Gherkin AC
 
 ### US-6.6: Edit or cancel a ride request
 **As a** church admin
-
 **I want to** change a ride request, move it to another route, or cancel it
-
 **So that** the routes stay correct when plans change.
 
 **Priority:** P2
-
 **Independent test:** The admin moves a request to another route and both routes change.
-
 **Acceptance scenarios:** see ### US-6.6 under Gherkin AC
 
 ### US-6.7: Open an address in a maps app
 **As a** driver
-
 **I want to** open a pickup address in a maps app
-
 **So that** I can get directions.
 
 **Priority:** P3
-
 **Independent test:** The driver clicks a stop and the address opens in a maps app.
-
 **Acceptance scenarios:** see ### US-6.7 under Gherkin AC
 
 ---
@@ -130,7 +96,7 @@
 
 ## Initial Data Model
 
-Services come from Feature 1 and members come from Feature 2. The system keeps two things:
+ The system keeps two things:
 
 - **Ride requests:** which service, which member, the pickup address (required, filled in from the member's address), the number of passengers (at least 1), special needs (optional), and the status (requested, assigned, picked up, not found or cancelled). A request can also have a route and a stop order. A member can have only one active request for each service.
 - **Routes:** which service, a name (for example "North route"), the driver (one member), and the number of seats.
