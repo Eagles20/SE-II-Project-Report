@@ -6,6 +6,7 @@
 **Created:** 2026-10-19  
 **Input:** Maintain sports for the sports league system.  
 **Depends on:** [Feature 1 — User-Authentication](feature-1-User-Authentication.md)       
+
 ------
 
 ## User Stories
