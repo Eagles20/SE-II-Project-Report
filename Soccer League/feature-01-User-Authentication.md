@@ -412,3 +412,96 @@
 - **When** the person opens a public page
 - **Then** the system shows no edit buttons
 
+  ## Screen Requirements
+
+### SCR-1.1: Login page
+
+- **Who can open it:** Everyone (no login needed)
+- **Fields:** Email, Password
+- **Buttons and links:** Log in, Forgot password
+- **Rules:**
+  - Show the same error message for a wrong email and a wrong password.
+  - If the account is locked, show a message that the account is locked and for how long.
+  - After login, open the page the user wanted, or the home page of the role.
+  - The password field hides the characters.
+- **Related:** US-1.1, US-1.3, FR-001, FR-002
+
+### SCR-1.2: Forgot password page
+
+- **Who can open it:** Everyone (no login needed)
+- **Fields:** Email
+- **Buttons and links:** Send reset link, Back to login
+- **Rules:**
+  - After the user clicks send, show a message that a link was sent if the account exists.
+  - The message is the same whether the email exists or not.
+- **Related:** US-1.6, FR-008
+
+### SCR-1.3: Reset password page
+
+- **Who can open it:** A person with a valid reset link
+- **Fields:** New password, Confirm new password
+- **Buttons and links:** Save password
+- **Rules:**
+  - If the link is used or older than 1 hour, show an error and a link to the forgot password page.
+  - Reject a password that is too short or does not match the confirm field.
+  - After saving, send the user to the login page with a success message.
+- **Related:** US-1.6, FR-008
+
+### SCR-1.4: Change temporary password page
+
+- **Who can open it:** A user with a temporary password, right after the first login
+- **Fields:** New password, Confirm new password
+- **Buttons and links:** Save password
+- **Rules:**
+  - The user cannot open any other page until the password is changed.
+  - Reject a password that is too short or does not match the confirm field.
+  - After saving, open the home page of the user's role.
+- **Related:** US-1.5, FR-007
+
+### SCR-1.5: Change my password page
+
+- **Who can open it:** Any logged in user
+- **Fields:** Old password, New password, Confirm new password
+- **Buttons and links:** Save password, Cancel
+- **Rules:**
+  - The old password must be correct, or the password is not changed.
+  - Reject a password that is too short or does not match the confirm field.
+  - Show a success message after saving.
+- **Related:** US-1.7, FR-009
+
+### SCR-1.6: Home page and menu
+
+- **Who can open it:** Any logged in user
+- **Content:** A menu and a Log out button
+- **Rules:**
+  - Show only the menu items for the user's role: owner, manager or ref.
+  - A ref sees only the schedule and pay pages.
+  - If the user opens a page that the role cannot use, reject the request.
+  - The Log out button ends the session and shows the login page.
+  - After 30 minutes with no activity, the next click shows the login page.
+- **Related:** US-1.2, US-1.8, US-1.9, FR-010, FR-011
+
+### SCR-1.7: Unlock account (owner only)
+
+- **Who can open it:** Owner only
+- **Content:** A list of user accounts with their status (Active, Inactive, Locked)
+- **Buttons and links:** Unlock (shown only for locked accounts)
+- **Rules:**
+  - Manager and ref users cannot open this screen (FR-006).
+  - After unlock, the user can log in again and the failed password count goes back to 0.
+- **Related:** US-1.4, FR-006
+
+### SCR-1.8: Public pages (for example, public standings)
+
+- **Who can open it:** Everyone (no login needed)
+- **Rules:**
+  - Do not ask for login (FR-013).
+  - Do not show any edit buttons.
+  - Show a link to the login page for staff.
+- **Related:** US-1.10, FR-013
+
+### Rules for all screens
+
+- Every screen MUST work on a computer and on a phone (FR-016).
+- Error messages MUST be short and clear, and MUST NOT show private details such as which part of the login was wrong.
+
