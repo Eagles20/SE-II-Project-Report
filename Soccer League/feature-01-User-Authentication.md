@@ -148,7 +148,7 @@
 - email: String — Required, unique
 - password_hash: String — Required
 - role: String — Required (Owner, Manager, Ref)
-- record_state: String — Required (Active, Inactive, Deleted). Deleted is a soft delete, see shared/GLOSSARY.md
+- record_state: String — Required (Active, Inactive, Deleted). 
 - must_change_password: Boolean — Required, true for a new user
 - failed_login_count: Integer — Required
 - locked_until: DateTime — Optional
