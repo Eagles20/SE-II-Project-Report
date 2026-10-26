@@ -110,6 +110,125 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-9.1: Ref list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of refs with these columns: Name, Email, Phone, Pay rate per game, Sports, Number of games, Record state
+- **Fields:** Filter (All refs or Refs with no games)
+- **Buttons and links:** Add ref, View, Edit, Set sports and availability, Delete, Make inactive / Make active, Games without a ref
+- **Rules:**
+  - Show the number of games for each ref (FR-014).
+  - The owner can show only the refs with no games (FR-014).
+  - Refs with the state Deleted are not shown in the list.
+  - Other roles cannot open this page (FR-019).
+- **Related:** US-9.4, FR-006, FR-014, FR-019
+
+### SCR-9.2: Add ref page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Email (required), Phone (required), Pay rate per game (required), Sports (required, choose one or more sports)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - A new ref starts with the state Active.
+  - After saving, the owner can set the availability of the ref (SCR-9.4).
+- **Related:** US-9.1, FR-003, FR-007, FR-008
+
+### SCR-9.3: Edit ref page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Email (required), Phone (required), Pay rate per game (required), Record state (Active or Inactive)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the ref when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - When the owner changes the state to Inactive and the ref has future assignments, show SCR-9.9 (FR-012).
+- **Related:** US-9.2, FR-004, FR-007, FR-012
+
+### SCR-9.4: Sports and availability page
+
+- **Who can open it:** Owner only
+- **Fields:** Sports (required, choose one or more sports), Available days and times (optional)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current sports and availability when the page opens.
+  - A ref must have at least one sport (FR-008).
+  - For example, the owner can set a ref available on weekends for basketball.
+- **Related:** US-9.5, FR-008
+
+### SCR-9.5: View ref page
+
+- **Who can open it:** Owner only
+- **Content:** Ref information (Name, Email, Phone, Pay rate, Record state), sports, availability, the number of games, and the list of assignments (game, date, time, status Pending, Confirmed or Declined)
+- **Buttons and links:** Edit, Set sports and availability, Delete, Back to list
+- **Rules:**
+  - Show the information as read only.
+  - Show the status of each assignment to the owner (FR-013).
+- **Related:** US-9.4, US-9.5, FR-006, FR-013
+
+### SCR-9.6: Games without a ref page
+
+- **Who can open it:** Owner only
+- **Content:** A table of the games that have no ref, and the games with no confirmed ref. Each game shows date, time, teams, location and ref status.
+- **Buttons and links:** Assign ref, Back to ref list
+- **Rules:**
+  - Show the games without a ref (FR-014).
+  - A game with no confirmed ref is shown as Needs ref until the owner fills it (FR-011).
+  - When a ref declines a game, the game appears here as needing a new ref.
+- **Related:** US-9.6, US-9.7, FR-011, FR-014
+
+### SCR-9.7: Assign ref to game page
+
+- **Who can open it:** Owner only
+- **Fields:** Game (required), Ref (required, the owner can choose one or more refs)
+- **Buttons and links:** Assign, Cancel
+- **Rules:**
+  - The owner can assign one or more refs to a game (FR-009).
+  - Show a warning if the ref is not available on that day or time, cannot work that sport, or already has a game at that time (FR-010).
+  - After saving, the assignment starts with the status Pending.
+- **Related:** US-9.6, FR-009, FR-010, FR-013
+
+### SCR-9.8: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The ref name and a question such as "Do you want to delete this ref?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the ref has unpaid or future assignments, reject the delete and show a message. The ref and the assignments stay unchanged (FR-015).
+  - If the ref has none, change the record state to Deleted (soft delete). Do not remove the data (FR-016).
+- **Related:** US-9.3, FR-005, FR-015, FR-016
+
+### SCR-9.9: Inactive ref warning message
+
+- **Who can open it:** Owner only (shown when the owner makes a ref inactive and the ref has future assignments)
+- **Content:** A warning with the number of future assignments of the ref
+- **Buttons and links:** Make inactive, Open the assignments of this ref, Back
+- **Rules:**
+  - Show this message only when the ref has future assignments (FR-012).
+- **Related:** FR-012
+
+### SCR-9.10: My schedule page (ref)
+
+- **Who can open it:** Ref only (login needed)
+- **Content:** A table of the games assigned to the ref with these columns: Date, Time, Location, Teams, Assignment status (Pending, Confirmed, Declined)
+- **Buttons and links:** Confirm, Decline (shown only for a Pending assignment)
+- **Rules:**
+  - A ref sees only their own games (FR-017).
+  - A ref can confirm or decline only their own assignments. An action on another ref's game is rejected (FR-019).
+  - After the ref confirms, the assignment shows Confirmed. After the ref declines, the owner sees the game as needing a new ref (FR-013).
+- **Related:** US-9.7, US-9.8, FR-013, FR-017, FR-019
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-020).
+- Only the owner can change ref information. A ref can only confirm or decline their own assignments. Other roles MUST be rejected (FR-019).
+- The email and phone of a ref MUST NOT be shown on any public page (FR-018).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Ref** — A referee who works games.

@@ -117,6 +117,121 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-3.1: League list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of leagues with these columns: Name, Sport, Games per team, Players (min to max), Record state
+- **Fields:** Sport filter (choose a sport or All sports)
+- **Buttons and links:** Add league, View, Edit, Copy, Delete, Make inactive / Make active
+- **Rules:**
+  - When the owner chooses a sport, show only the leagues of that sport (FR-015).
+  - Leagues with the state Deleted are not shown in the list.
+  - Other roles cannot open this page (FR-016).
+- **Related:** US-3.4, US-3.7, US-3.8, FR-006, FR-015, FR-016
+
+### SCR-3.2: Add league page
+
+- **Who can open it:** Owner only
+- **Fields:** Sport (required), Name (required), Games per team (required), Minimum players (required), Maximum players (required), Description (optional)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007, FR-010).
+  - Games per team must be more than 0.
+  - Minimum players must not be higher than maximum players.
+  - Reject a league name that already exists in the same sport (FR-009).
+  - When the owner clicks Save, show a confirm message before saving (FR-018).
+  - A new league starts with the state Active.
+- **Related:** US-3.1, US-3.5, FR-003, FR-007, FR-008, FR-009, FR-010, FR-018
+
+### SCR-3.3: Edit league page
+
+- **Who can open it:** Owner only
+- **Fields:** Sport (required), Name (required), Games per team (required), Minimum players (required), Maximum players (required), Description (optional), Record state (Active or Inactive)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the league when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - Minimum players must not be higher than maximum players.
+  - Games per team must be more than 0.
+  - Reject a league name that already exists in the same sport (FR-009).
+  - When the owner clicks Save, show a confirm message before saving (FR-018).
+  - Making a league Inactive hides it from the public. Seasons, games and stats stay (FR-013).
+- **Related:** US-3.2, US-3.5, US-3.7, FR-004, FR-013, FR-018
+
+### SCR-3.4: View league page
+
+- **Who can open it:** Owner only
+- **Content:** League information (Sport, Name, Games per team, Minimum and maximum players, Description, Record state), a list of teams, a list of seasons
+- **Buttons and links:** Edit, Copy, Delete, Back to list
+- **Rules:**
+  - Show the league information as read only.
+  - Show the teams and seasons of the league in one place.
+- **Related:** US-3.4, FR-006
+
+### SCR-3.5: Copy league page
+
+- **Who can open it:** Owner only
+- **Fields:** New league name (required), Sport (starts with the sport of the copied league)
+- **Buttons and links:** Create copy, Cancel
+- **Rules:**
+  - Show the settings that will be copied: Games per team, Minimum and maximum players, Description.
+  - The copy keeps the settings but does not copy teams, seasons or games (FR-014).
+  - Reject a league name that already exists in the same sport (FR-009).
+  - When the owner clicks Create copy, show a confirm message before saving (FR-018).
+- **Related:** US-3.6, FR-009, FR-014, FR-018
+
+### SCR-3.6: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The league name and a question such as "Do you want to delete this league?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the league has teams or seasons, reject the delete and show a message. The league and the other records stay unchanged (FR-011).
+  - If the league has no teams or seasons, change the record state to Deleted (soft delete). Do not remove the data (FR-012).
+  - Past records keep showing the original league information (FR-012).
+- **Related:** US-3.3, FR-005, FR-011, FR-012
+
+### SCR-3.7: Confirm save message
+
+- **Who can open it:** Owner only (shown after the owner clicks Save or Create copy)
+- **Content:** A short question such as "Do you want to save this change?"
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - Nothing is saved until the owner clicks Confirm (FR-018).
+  - Cancel returns the owner to the form with the information still filled in.
+- **Related:** FR-018
+
+### SCR-3.8: Public leagues page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** Active leagues grouped by sport. Each league shows its name and sport.
+- **Buttons and links:** Open a league
+- **Rules:**
+  - Show only leagues with the state Active (FR-013).
+  - Do not show any edit buttons.
+  - Do not ask for login.
+- **Related:** US-3.9, FR-013
+
+### SCR-3.9: Public league page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The league name, sport, description, the seasons of the league and the teams of the league
+- **Buttons and links:** Open a team or season (if those pages exist), Back to leagues
+- **Rules:**
+  - Do not show any edit buttons.
+  - If the league is Inactive or Deleted, do not show the page.
+- **Related:** US-3.9
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-017).
+- Only the owner can change information. Other roles MUST be rejected (FR-016).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **League** — A group of teams that play each other in one sport, for example Fall League.

@@ -109,6 +109,120 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-6.1: Team list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of teams with these columns: Name, League, Manager, Home location, Number of players, Record state, Warnings
+- **Buttons and links:** Add team, View, Edit, Change manager, Make inactive / Make active, Delete
+- **Rules:**
+  - Show a warning for a team that has no manager or has fewer players than the league minimum (FR-016).
+  - Teams with the state Deleted are not shown in the list.
+  - Other roles cannot open this page. A manager uses SCR-6.7 to see their own team (FR-018).
+- **Related:** US-6.6, US-6.7, FR-006, FR-016, FR-018
+
+### SCR-6.2: Add team page
+
+- **Who can open it:** Owner only
+- **Fields:** League (required), Name (required), Manager (required, choose a user), Home location (optional)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - Reject a team name that already exists in the same league (FR-008).
+  - Every team has one league and one manager (FR-009).
+  - A new team starts with the state Active.
+- **Related:** US-6.1, FR-003, FR-007, FR-008, FR-009
+
+### SCR-6.3: Edit team page
+
+- **Who can open it:** Owner, and a manager for their own team only
+- **Fields:** Name (required), Home location (optional). The owner also sees League (required) and Record state (Active or Inactive).
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the team when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - Reject a team name that already exists in the same league (FR-008).
+  - A manager can edit only their own team. A manager who opens another team is rejected (FR-011).
+  - Only the owner can change the manager. Use SCR-6.4 for this (FR-010).
+  - When the owner changes the state to Inactive and the team has future games, show SCR-6.5 (FR-015).
+- **Related:** US-6.2, US-6.6, FR-004, FR-008, FR-011, FR-014, FR-015
+
+### SCR-6.4: Change manager page
+
+- **Who can open it:** Owner only
+- **Fields:** New manager (required, choose a user)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current manager when the page opens.
+  - After saving, the new manager can manage the team and the old manager loses access to that team (FR-010).
+- **Related:** US-6.5, FR-010
+
+### SCR-6.5: Inactive team warning message
+
+- **Who can open it:** Owner only (shown when the owner makes a team inactive and the team has future games)
+- **Content:** A warning with the number of future games of the team, and a request to move or cancel them
+- **Buttons and links:** Make inactive, Open the games of this team, Back
+- **Rules:**
+  - Show this message only when the team has future games (FR-015).
+  - An inactive team is not used when games are generated (FR-014).
+  - The team and its history stay in the system.
+- **Related:** US-6.6, FR-014, FR-015
+
+### SCR-6.6: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The team name and a question such as "Do you want to delete this team?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the team has games, reject the delete and show a message. The team and its games stay unchanged (FR-012).
+  - If the team has no games, change the record state to Deleted (soft delete). Do not remove the data (FR-013).
+  - Past records keep showing the original team information (FR-013).
+- **Related:** US-6.3, FR-005, FR-012, FR-013
+
+### SCR-6.7: View team page
+
+- **Who can open it:** Owner, and a manager for their own team
+- **Content:** Team information (Name, League, Manager, Home location, Record state), the roster, the games, and the record (wins, losses, ties)
+- **Buttons and links:** Edit, Back to list (owner only). The owner also sees Change manager and Delete.
+- **Rules:**
+  - Calculate the record from the game results (FR-017).
+  - For example, a team that won 3 games and lost 1 shows 3 wins and 1 loss.
+  - Show a warning when the team has fewer players than the league minimum or has no manager (FR-016).
+  - A manager sees only their own team (FR-011).
+- **Related:** US-6.4, US-6.7, FR-006, FR-016, FR-017
+
+### SCR-6.8: Public team search page
+
+- **Who can open it:** Everyone (no login needed)
+- **Fields:** Search box (search by team name)
+- **Content:** A list of matching teams
+- **Buttons and links:** Open a team
+- **Rules:**
+  - Search finds teams by part of the name.
+  - Show only teams with the state Active.
+  - Do not show any edit buttons.
+  - Do not ask for login.
+- **Related:** US-6.8
+
+### SCR-6.9: Public team page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The team name, league, players, games and record (wins, losses, ties)
+- **Buttons and links:** Back to search
+- **Rules:**
+  - Do not show any edit buttons.
+  - Do not show a team with the state Deleted.
+- **Related:** US-6.8, FR-017
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-019).
+- Only the owner and the managers can change information, and a manager only for their own team. Other roles MUST be rejected (FR-018).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Team** — A group of players with one manager that plays in a league.

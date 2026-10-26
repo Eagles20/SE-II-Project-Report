@@ -5,7 +5,8 @@
 **Status:** Draft  
 **Created:** 2026-10-19  
 **Input:** Maintain sports for the sports league system.  
-**Depends on:** [Feature 1 — User-Authentication](feature-1-User-Authentication.md)       
+**Depends on:** [Feature 1 — User-Authentication](feature-1-User-Authentication.md)
+
 ------
 
 ## User Stories
@@ -84,14 +85,114 @@
 - **FR-005:** The system MUST allow authorized users to delete sports.
 - **FR-006:** The system MUST allow authorized users to view sports.
 - **FR-007:** Required sport information MUST be provided before the sport can be saved (name, gender group).
-- **FR-008:** The system MUST reject a duplicate sport name. The check MUST NOT depend on capital letters.
+- **FR-008:** The system MUST reject a duplicate sport. A sport is a duplicate when another sport has the same name and the same gender group. The check MUST NOT depend on capital letters.
 - **FR-009:** The system MUST NOT delete a sport that has leagues.
 - **FR-010:** Deleting a sport MUST be a soft delete (record state Deleted), so other features keep the original sport information.
-- **FR-011:** A sport MUST have a record state (Active, Inactive or Deleted. Inactive sports MUST be hidden from the public but all data MUST stay.
+- **FR-011:** A sport MUST have a record state (Active, Inactive or Deleted). Inactive sports MUST be hidden from the public but all data MUST stay.
 - **FR-012:** The system MUST let the owner search sports by name and MUST show the number of leagues for each sport.
 - **FR-013:** The system MUST let the owner use this feature (main user: owner), and MUST NOT let other roles change its information.
 - **FR-014:** The system MUST work on an office computer and on a phone.
 - **FR-015:** This feature is not used very often, so the system MUST ask the user to confirm before saving a change.
+
+-----
+
+## Screen Requirements
+
+### SCR-2.1: Sport list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of sports with these columns: Name, Gender group, Record state, Number of leagues
+- **Fields:** Search box (search by name)
+- **Buttons and links:** Add sport, View, Edit, Delete, Make inactive / Make active
+- **Rules:**
+  - Show the number of leagues for each sport (FR-012).
+  - Search finds sports by part of the name. If nothing is found, show "No sport found" (FR-012).
+  - Sports with the state Deleted are not shown in the list.
+  - Other roles cannot open this page (FR-013).
+- **Related:** US-2.4, US-2.5, US-2.6, FR-006, FR-012, FR-013
+
+### SCR-2.2: Add sport page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Gender group (required, choose Men, Women or Co-ed), Description (optional)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - Reject a duplicate sport (same name and same gender group). The check does not depend on capital letters (FR-008).
+  - Basketball for Men and Basketball for Women are different sports and are allowed.
+  - When the owner clicks Save, show a confirm message before saving (FR-015).
+  - A new sport starts with the state Active.
+- **Related:** US-2.1, FR-003, FR-007, FR-008, FR-015
+
+### SCR-2.3: Edit sport page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Gender group (required), Description (optional), Record state (Active or Inactive)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the sport when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - Reject a duplicate sport (FR-008).
+  - When the owner clicks Save, show a confirm message before saving (FR-015).
+  - Making a sport Inactive hides it from the public. All leagues, games and stats stay (FR-011).
+- **Related:** US-2.2, US-2.5, FR-004, FR-011, FR-015
+
+### SCR-2.4: View sport page
+
+- **Who can open it:** Owner only
+- **Content:** Name, Gender group, Description, Record state, Number of leagues
+- **Buttons and links:** Edit, Delete, Back to list
+- **Rules:**
+  - Show the information as read only.
+- **Related:** US-2.4, FR-006, FR-012
+
+### SCR-2.5: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The sport name and a question such as "Do you want to delete this sport?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the sport has leagues, reject the delete and show a message. The sport and its leagues stay unchanged (FR-009).
+  - If the sport has no leagues, change the record state to Deleted (soft delete). Do not remove the data (FR-010).
+  - Past records keep showing the original sport information (FR-010).
+- **Related:** US-2.3, FR-005, FR-009, FR-010
+
+### SCR-2.6: Confirm save message
+
+- **Who can open it:** Owner only (shown after the owner clicks Save on SCR-2.2 or SCR-2.3)
+- **Content:** A short question such as "Do you want to save this change?"
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - Nothing is saved until the owner clicks Confirm (FR-015).
+  - Cancel returns the owner to the form with the information still filled in.
+- **Related:** FR-015
+
+### SCR-2.7: Public sports page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** A list of active sports. Each sport shows its name and gender group.
+- **Buttons and links:** Open a sport
+- **Rules:**
+  - Show only sports with the state Active (FR-011).
+  - Do not show any edit buttons.
+  - Do not ask for login.
+- **Related:** US-2.7, FR-011
+
+### SCR-2.8: Public sport page (leagues of a sport)
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The sport name, gender group, description, and the list of its leagues
+- **Buttons and links:** Open a league, Back to sports
+- **Rules:**
+  - Do not show any edit buttons.
+  - If the sport is Inactive or Deleted, do not show the page.
+- **Related:** US-2.7
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-014).
+- Only the owner can change information. Other roles MUST be rejected (FR-013).
+- Error messages MUST be short and clear.
 
 -----
 
@@ -109,7 +210,7 @@
 - name: String — Required
 - gender_group: String — Required (Men, Women, Co-ed)
 - description: String — Optional
-- record_state: String — Required (Active, Inactive, Deleted). Deleted is a soft delete, see shared/GLOSSARY.md
+- record_state: String — Required (Active, Inactive, Deleted). 
 
 -----
 

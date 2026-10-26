@@ -119,6 +119,126 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-12.1: Season schedule page
+
+- **Who can open it:** Owner only
+- **Fields:** Season (required, choose a season)
+- **Content:** The schedule of the chosen season: status (No schedule, Draft or Published), and when it was generated or published
+- **Buttons and links:** Set settings, Generate schedule, View preview, View summary, Publish, Delete schedule, View history
+- **Rules:**
+  - The owner chooses a season and starts "Generate schedule" (FR-001).
+  - A season can have only one generated schedule (Draft or Published). If the season already has one, ask the owner to replace or delete it first (FR-015).
+  - Other roles cannot open this page (FR-019).
+- **Related:** US-12.2, US-12.6, US-12.7, FR-001, FR-015, FR-019
+
+### SCR-12.2: Generator settings page
+
+- **Who can open it:** Owner only
+- **Fields:** Season (required), Play days and times (required), Locations and fields (required, choose one or more), Refs (required, choose the refs who are available)
+- **Buttons and links:** Save settings, Generate schedule, Cancel
+- **Rules:**
+  - If a required field is empty, for example no location is chosen, do not save the settings (FR-002).
+  - Show only active locations and active refs.
+  - The system creates games so that each active team plays the number of games set in the league (FR-004).
+- **Related:** US-12.1, US-12.2, FR-002, FR-004
+
+### SCR-12.3: Team blackout dates page
+
+- **Who can open it:** Owner only
+- **Fields:** Team (required), Date (required)
+- **Content:** The list of blackout dates of the teams
+- **Buttons and links:** Add blackout date, Back
+- **Rules:**
+  - A team has no game on its blackout dates (FR-003).
+- **Related:** US-12.3, FR-003
+
+### SCR-12.4: Schedule preview page
+
+- **Who can open it:** Owner only
+- **Content:** A table of the generated games with these columns: Date, Time, Home team, Away team, Location, Field, Ref. Below it, a list of problems that the system could not solve (for example not enough refs or time slots).
+- **Buttons and links:** Edit game, Save as draft, View summary, Back
+- **Rules:**
+  - Show the preview before anything is saved. Nothing is saved until the owner confirms (FR-010, FR-017).
+  - List the problems, for example the games without a ref (FR-010).
+  - A game without a ref is marked Needs ref (FR-016).
+  - No team, field or ref is in two games at the same time (FR-008).
+  - Teams play different opponents as much as possible, and home and away games are balanced (FR-005, FR-006).
+- **Related:** US-12.2, US-12.4, FR-005, FR-006, FR-007, FR-008, FR-010, FR-016, FR-017
+
+### SCR-12.5: Edit game in preview page
+
+- **Who can open it:** Owner only
+- **Fields:** Date (required), Time (required), Location and field (required), Ref (required)
+- **Buttons and links:** Save change, Cancel
+- **Rules:**
+  - Show the current information of the game when the page opens.
+  - After saving, the preview shows the change and keeps the other games (FR-011).
+  - Do not put a team, a field or a ref in two games at the same time (FR-008).
+- **Related:** US-12.5, FR-008, FR-011
+
+### SCR-12.6: Schedule summary page
+
+- **Who can open it:** Owner only
+- **Content:** Three tables: Games per team, Games per location, Games per ref
+- **Buttons and links:** Back
+- **Rules:**
+  - Show the summary for the generated schedule (FR-012).
+  - The owner uses it to check that the games are shared fairly, including between refs (FR-009).
+- **Related:** US-12.8, FR-009, FR-012
+
+### SCR-12.7: Confirm save or publish message
+
+- **Who can open it:** Owner only (shown after the owner clicks Save as draft or Publish)
+- **Content:** A short question such as "Do you want to save this schedule as a draft?" or "Do you want to publish this schedule?". If some games are marked Needs ref, show a warning with the number of those games.
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - Nothing is saved or published until the owner clicks Confirm (FR-017).
+  - Saving creates a Draft. Managers and the public do not see a Draft (FR-013).
+  - Publishing is allowed with Needs ref games, but only after the warning is shown and the owner confirms (FR-016).
+  - Save the action in the schedule history (FR-018).
+- **Related:** US-12.4, US-12.6, FR-013, FR-016, FR-017, FR-018
+
+### SCR-12.8: Delete schedule confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete schedule)
+- **Content:** The season name and a question such as "Do you want to delete this generated schedule?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If any game of the schedule has a result, reject the delete. The games stay unchanged (FR-014).
+  - If no game has a result, remove the generated games.
+  - Save the action in the schedule history (FR-018).
+- **Related:** US-12.7, FR-014, FR-018
+
+### SCR-12.9: Schedule history page
+
+- **Who can open it:** Owner only
+- **Content:** A table of the history of the schedule. Each row shows the action (Generated, Published or Deleted), who did it and when.
+- **Buttons and links:** Back
+- **Rules:**
+  - Show who did each action and when (FR-018).
+- **Related:** FR-018
+
+### SCR-12.10: Published schedule page (manager)
+
+- **Who can open it:** Manager (login needed)
+- **Content:** A table of the games of the manager's team with these columns: Date, Time, Opponent, Home or away, Location
+- **Rules:**
+  - Show the games only after the owner publishes the schedule (FR-013).
+  - A manager sees only the games of their own team.
+  - The page is read only. Do not show any edit buttons.
+  - The public sees the published games on the public schedule page.
+- **Related:** US-12.9, FR-013
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer (FR-020).
+- Only the owner can generate, save, publish or delete a schedule. Other roles MUST be rejected (FR-019).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Schedule** — The set of generated games of one season.

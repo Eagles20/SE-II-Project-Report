@@ -113,6 +113,114 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-13.1: Pay summary page
+
+- **Who can open it:** Owner only
+- **Content:** A table of the refs with these columns: Ref name, Number of unpaid games, Amount owed. Below it, the total owed to all refs.
+- **Fields:** Filters: Ref, Season, Date range (start date and end date), Paid or Unpaid
+- **Buttons and links:** View ref pay, Pay report
+- **Rules:**
+  - Show the amount owed to each ref (all unpaid games) and the total owed to all refs (FR-002).
+  - The owner can filter payments by ref, season, date range and paid or unpaid (FR-007).
+  - If nothing is found, show "No payments found" and amounts of 0. Do not show an error (FR-010).
+  - Other roles cannot open this page (FR-013).
+- **Related:** US-13.1, FR-002, FR-007, FR-010, FR-013
+
+### SCR-13.2: Ref pay page
+
+- **Who can open it:** Owner only
+- **Content:** The name of the ref, the amount owed, and a table of the assignments of the ref with these columns: Game, Date, Pay amount, Status (Paid or Unpaid), Pay date, Payment method. Below it, the payment history (paid marks and undo actions with reasons).
+- **Fields:** A checkbox for each assignment
+- **Buttons and links:** Mark as paid, Change pay, Undo paid mark, Cancelled game rule, Back to summary
+- **Rules:**
+  - The owner can select one or many assignments and mark them as paid (FR-004).
+  - After games are marked as paid, the amount owed goes down. For example, Paul has 4 unpaid games at 30 each. After 2 games are paid, Paul is owed 60.
+  - Show the payment history with the reason of each undo (FR-005).
+- **Related:** US-13.1, US-13.2, US-13.3, US-13.4, FR-002, FR-004, FR-005
+
+### SCR-13.3: Mark as paid page
+
+- **Who can open it:** Owner only
+- **Fields:** Pay date (required), Payment method (required, choose Cash, Check or Other)
+- **Content:** The list of the selected assignments and their total
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If no payment method is chosen, do not save the paid mark (FR-004).
+  - Save the pay date and the payment method for every selected assignment (FR-004).
+  - Save the paid mark in the payment history.
+- **Related:** US-13.2, FR-004
+
+### SCR-13.4: Change pay page
+
+- **Who can open it:** Owner only
+- **Fields:** Pay amount (required)
+- **Content:** The game, the ref, and the current pay amount
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - The pay of one assignment starts from the pay rate of the ref (FR-001).
+  - The owner can change the pay of one assignment, for example to add a bonus (FR-003).
+  - After saving, the amount owed shows the new pay.
+- **Related:** US-13.3, FR-001, FR-003
+
+### SCR-13.5: Undo paid mark page
+
+- **Who can open it:** Owner only
+- **Fields:** Reason (required)
+- **Content:** The game and the ref
+- **Buttons and links:** Undo paid mark, Cancel
+- **Rules:**
+  - If the reason is empty, do not undo the paid mark (FR-005).
+  - After the undo, the game is unpaid again.
+  - Keep the reason in the payment history (FR-005).
+- **Related:** US-13.4, FR-005
+
+### SCR-13.6: Cancelled game pay page
+
+- **Who can open it:** Owner only
+- **Fields:** Pay rule for this game (choose Pay or Do not pay)
+- **Content:** The cancelled game, the ref and the pay amount
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - The owner chooses Pay or Do not pay for a cancelled game (FR-006).
+  - If the owner chooses Do not pay, the game adds 0 to the amount owed.
+  - If the owner chooses Pay, the game adds its pay to the amount owed.
+- **Related:** US-13.5, FR-006
+
+### SCR-13.7: Pay report page
+
+- **Who can open it:** Owner only
+- **Fields:** Start date (required), End date (required), Filters: Ref, Season, Paid or Unpaid
+- **Content:** A table with these columns: Ref, Game, Date, Pay, Status. Below it, the totals.
+- **Buttons and links:** Build report, Export to CSV, Back to summary
+- **Rules:**
+  - Include the start date and the end date, both days (FR-009).
+  - Use the league's local time zone, America/Chicago (FR-009).
+  - For example, a report from Oct 1 to Oct 31 includes a game on Oct 31.
+  - If nothing is found, show "No payments found" and a total of 0. Do not show an error (FR-010).
+  - Export to CSV gives a file with ref, game, date, pay and status (FR-008).
+- **Related:** US-13.6, US-13.7, FR-007, FR-008, FR-009, FR-010
+
+### SCR-13.8: My pay page (ref)
+
+- **Who can open it:** Ref only (login needed)
+- **Content:** A table of the games of the ref with these columns: Game, Date, Pay amount, Status (Paid or Unpaid), Pay date. Below it, the pay history and the unpaid total.
+- **Rules:**
+  - A ref sees only their own games, pay and pay history (FR-011).
+  - Show the unpaid total. For example, 2 unpaid games at 30 each shows 60 unpaid.
+  - The page is read only. A ref cannot change any payment (FR-013).
+- **Related:** US-13.8, FR-011, FR-013
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-014).
+- Ref pay MUST NOT be shown on any public page. There is no public screen in this feature (FR-012).
+- Only the owner can change payments. A ref can only view their own payments. Other roles MUST be rejected (FR-013).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Ref payment** — The pay amount and paid status of one ref assignment.

@@ -109,6 +109,137 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-8.1: Location list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of locations with these columns: Name, Address, Number of fields, Record state
+- **Buttons and links:** Add location, View, Edit, Delete, Make inactive / Make active
+- **Rules:**
+  - Locations with the state Deleted are not shown in the list.
+  - Other roles cannot open this page (FR-017).
+- **Related:** US-8.8, FR-006, FR-017
+
+### SCR-8.2: Add location page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Address (required), Notes (optional, for example parking or entrance)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - When the owner clicks Save, show a confirm message before saving (FR-019).
+  - A new location starts with the state Active.
+  - After saving, the owner can add fields to the location (SCR-8.5).
+- **Related:** US-8.1, FR-003, FR-007, FR-019
+
+### SCR-8.3: Edit location page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Address (required), Notes (optional), Record state (Active or Inactive)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the location when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - When the owner changes the state to Inactive and the location has future games, show SCR-8.9 (FR-012).
+  - When the owner clicks Save, show a confirm message before saving (FR-019).
+- **Related:** US-8.2, US-8.8, FR-004, FR-007, FR-012, FR-019
+
+### SCR-8.4: View location page
+
+- **Who can open it:** Owner only
+- **Content:** Location information (Name, Address, Notes, Record state), the list of fields, and the list of blocked dates
+- **Buttons and links:** Edit, Manage fields, Block dates, See games by date, Delete, Back to list
+- **Rules:**
+  - Show the information as read only.
+- **Related:** US-8.5, US-8.6, US-8.7, FR-006
+
+### SCR-8.5: Manage fields page
+
+- **Who can open it:** Owner only
+- **Content:** The list of fields or courts of the location
+- **Fields:** Field name (required, for example Field 1)
+- **Buttons and links:** Add field, Back to location
+- **Rules:**
+  - A location can have several fields or courts (FR-008).
+  - Two games can be placed at the same time on different fields of the same location.
+  - Two games cannot be placed at the same field at the same time (FR-009).
+  - When the owner clicks Add field, show a confirm message before saving (FR-019).
+- **Related:** US-8.5, FR-008, FR-009, FR-019
+
+### SCR-8.6: Block dates page
+
+- **Who can open it:** Owner only
+- **Content:** The list of blocked dates of the location, and the games already placed at the location on the chosen date
+- **Fields:** Date (required), Reason (optional)
+- **Buttons and links:** Block date, Back to location
+- **Rules:**
+  - If games are already placed at the location on that date, list them so the owner can move them (FR-010).
+  - A blocked date cannot be used for a new game (FR-011).
+  - When the owner clicks Block date, show a confirm message before saving (FR-019).
+- **Related:** US-8.6, FR-010, FR-011, FR-019
+
+### SCR-8.7: Games at a location page
+
+- **Who can open it:** Owner only
+- **Fields:** Date (required)
+- **Content:** The games at the location on that date, in time order. Each game shows time, teams and status.
+- **Buttons and links:** Back to location
+- **Rules:**
+  - Show the games in time order (FR-015).
+  - If there are no games, show "No games on this date".
+- **Related:** US-8.7, FR-015
+
+### SCR-8.8: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The location name and a question such as "Do you want to delete this location?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the location is used by games or teams, reject the delete and show a message. The location and its games stay unchanged (FR-013).
+  - If the location is not used, change the record state to Deleted (soft delete). Do not remove the data (FR-014).
+  - Past games keep showing the original location information (FR-014).
+- **Related:** US-8.3, FR-005, FR-013, FR-014
+
+### SCR-8.9: Inactive location warning message
+
+- **Who can open it:** Owner only (shown when the owner makes a location inactive and the location has future games)
+- **Content:** A warning with the number of future games at the location, and a request to move them
+- **Buttons and links:** Make inactive, Open the games of this location, Back
+- **Rules:**
+  - Show this message only when the location has future games (FR-012).
+  - An inactive location cannot be used for a new game (FR-011).
+- **Related:** US-8.8, FR-011, FR-012
+
+### SCR-8.10: Confirm save message
+
+- **Who can open it:** Owner only (shown after the owner clicks Save, Add field or Block date)
+- **Content:** A short question such as "Do you want to save this change?"
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - Nothing is saved until the owner clicks Confirm (FR-019).
+  - Cancel returns the owner to the form with the information still filled in.
+- **Related:** FR-019
+
+### SCR-8.11: Public location information (on the game page)
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The location name, the address and a map link, shown on the public game page
+- **Buttons and links:** Open map
+- **Rules:**
+  - The public game page must show the address and a map link (FR-016).
+  - Do not show any edit buttons.
+  - Do not ask for login.
+- **Related:** US-8.4, FR-016
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-018).
+- Only the owner can change information. Other roles MUST be rejected (FR-017).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Location** — A place with one or more fields or courts where games are played.

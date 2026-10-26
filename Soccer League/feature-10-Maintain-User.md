@@ -112,6 +112,123 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-10.1: User list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of users with these columns: Name, Email, Role, Linked team or ref record, Last login, Record state
+- **Fields:** Role filter (All, Owner, Manager or Ref), Search box (search by name or email)
+- **Buttons and links:** Add user, View, Edit, Make inactive / Make active, Reset password, Delete
+- **Rules:**
+  - The owner can filter users by role and search by name or email (FR-018).
+  - Show the last login of each user (FR-018).
+  - Users with the state Deleted are not shown in the list.
+  - Other roles cannot open this page (FR-020).
+- **Related:** US-10.5, FR-006, FR-018, FR-020
+
+### SCR-10.2: Add user page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Email (required), Role (required, choose Owner, Manager or Ref), Phone (optional), Team (required when the role is Manager), Ref record (required when the role is Ref)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - Reject an email that is already used by another user (FR-008).
+  - A manager must be linked to a team, and a ref must be linked to a ref record. If the link is missing, do not save (FR-010).
+  - After saving, the system sends an email with a temporary password (FR-009).
+  - A new user starts with the state Active.
+  - When the owner clicks Save, show a confirm message before saving (FR-022).
+- **Related:** US-10.1, US-10.7, FR-003, FR-007, FR-008, FR-009, FR-010, FR-022
+
+### SCR-10.3: Edit user page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Email (required), Phone (optional), Role (required), Team (required for a manager), Ref record (required for a ref)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the user when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - Reject an email that is already used by another user (FR-008).
+  - Do not change the role of a manager who is linked to a team, or of a ref who is linked to a ref record. Show a message to remove the link first (FR-016).
+  - Save a role change in the user history (FR-017).
+  - When the owner clicks Save, show a confirm message before saving (FR-022).
+- **Related:** US-10.2, US-10.7, FR-004, FR-007, FR-008, FR-010, FR-016, FR-017, FR-022
+
+### SCR-10.4: View user page
+
+- **Who can open it:** Owner only
+- **Content:** User information (Name, Email, Phone, Role, Linked team or ref record, Last login, Record state), and the change history (action, who, when)
+- **Buttons and links:** Edit, Make inactive / Make active, Reset password, Delete, Back to list
+- **Rules:**
+  - Show the information as read only.
+  - Show the history of changes: role changes, made inactive, made active and password resets (FR-017).
+- **Related:** US-10.3, FR-006, FR-017
+
+### SCR-10.5: Make inactive or active confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Make inactive or Make active)
+- **Content:** The user name and a question such as "Do you want to make this user inactive?"
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - An Inactive user cannot log in (FR-011).
+  - Reject the action when the user is the last active owner (FR-012).
+  - When the user is made active again, the user can log in again.
+  - Save the change in the user history: who did it and when (FR-017).
+- **Related:** US-10.3, FR-011, FR-012, FR-017
+
+### SCR-10.6: Reset password confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Reset password)
+- **Content:** The user name and a question such as "Do you want to reset the password of this user?"
+- **Buttons and links:** Confirm reset, Cancel
+- **Rules:**
+  - After the owner confirms, the system sends a temporary password by email (FR-015).
+  - The user must change the temporary password at the next login.
+  - Save the reset in the user history (FR-017).
+- **Related:** US-10.6, FR-015, FR-017
+
+### SCR-10.7: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The user name and a question such as "Do you want to delete this user?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the user did something in the system, reject the delete and suggest to make the user inactive (FR-013).
+  - If the user is the last active owner, reject the delete (FR-012).
+  - If the user did nothing, change the record state to Deleted (soft delete). Do not remove the data (FR-014).
+- **Related:** US-10.4, FR-005, FR-012, FR-013, FR-014
+
+### SCR-10.8: Confirm save message
+
+- **Who can open it:** Owner only (shown after the owner clicks Save on SCR-10.2 or SCR-10.3)
+- **Content:** A short question such as "Do you want to save this change?"
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - Nothing is saved until the owner clicks Confirm (FR-022).
+  - Cancel returns the owner to the form with the information still filled in.
+- **Related:** FR-022
+
+### SCR-10.9: My profile page
+
+- **Who can open it:** Any logged in manager or ref
+- **Fields:** Name (required), Phone (optional), Email (required). Role is shown but cannot be changed.
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - The user can edit only their own name, phone and email (FR-019).
+  - The user cannot change their own role. Reject the change (FR-019).
+  - Reject an email that is already used by another user (FR-008).
+  - When the user clicks Save, show a confirm message before saving (FR-022).
+- **Related:** US-10.8, FR-008, FR-019, FR-022
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-021).
+- Only the owner can change other users. Other roles MUST be rejected (FR-020).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **User** — A person with an account and a role (Owner, Manager or Ref).

@@ -145,6 +145,158 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-14.1: Public home page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** Upcoming games, recent results, and the active announcements and sponsor messages
+- **Fields:** Search box (search teams and players by name)
+- **Buttons and links:** Open a game, Open a team, Browse sports, Staff login
+- **Rules:**
+  - Show upcoming games, recent results and announcements (FR-002).
+  - Show an announcement only between its start date and its end date.
+  - If there are no games or results, show a clear message such as "No games yet" (FR-016).
+  - Do not show any edit buttons.
+- **Related:** US-14.1, FR-001, FR-002, FR-016
+
+### SCR-14.2: Browse sports, leagues and seasons page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** Three levels. First a list of sports, then the leagues of the chosen sport, then the seasons of the chosen league.
+- **Buttons and links:** Open a sport, Open a league, Open a season, Back
+- **Rules:**
+  - The public browses Sport, then League, then Season (FR-003).
+  - Do not show a league or a season that the owner hid (FR-013).
+  - Past seasons stay in the list (FR-015).
+  - If a level has nothing to show, show a clear message (FR-016).
+- **Related:** US-14.2, FR-003, FR-013, FR-015, FR-016
+
+### SCR-14.3: Season schedule page
+
+- **Who can open it:** Everyone (no login needed)
+- **Fields:** Filters: Team, Start date, End date, Location
+- **Content:** A table of the games of the season with these columns: Date, Time, Home team, Away team, Location, Status. A cancelled or moved game shows the reason.
+- **Buttons and links:** Clear filters, Print view, Copy link, Open a game
+- **Rules:**
+  - The public can filter the schedule by team, date and location (FR-004).
+  - A date filter includes both the start day and the end day (FR-017).
+  - Show cancelled and moved games with the reason (FR-009).
+  - If the season has no games, show "No games yet" (FR-016).
+  - If a filter finds nothing, show "Nothing found" and a way to clear the filter (FR-017).
+  - Show only published games.
+- **Related:** US-14.3, US-14.12, FR-004, FR-009, FR-016, FR-017
+
+### SCR-14.4: Print schedule view
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The schedule of the season in a layout that fits on paper
+- **Buttons and links:** Print, Back to schedule
+- **Rules:**
+  - The schedule has a print-friendly view (FR-011).
+  - Do not show menus or buttons that are not needed on paper.
+- **Related:** US-14.12, FR-011
+
+### SCR-14.5: Standings page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** A table of the teams of a season with these columns: Team, Wins, Losses, Ties
+- **Buttons and links:** Open a team
+- **Rules:**
+  - Show the standings of the season, built from the results (FR-005).
+  - If a season has no results, show all teams with 0 wins, 0 losses and 0 ties.
+- **Related:** US-14.4, FR-005
+
+### SCR-14.6: Team page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The team name, the players, the games and the record (wins, losses, ties)
+- **Buttons and links:** Open a player, Open a game, Copy link
+- **Rules:**
+  - The page has its own link that can be shared (FR-011).
+  - Do not show the email or the phone of any player (FR-014).
+  - If the team has no players or no games, show a clear message (FR-016).
+- **Related:** US-14.5, US-14.12, FR-006, FR-011, FR-014, FR-016
+
+### SCR-14.7: Player page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The player name, team, the stats for each game, and the season total
+- **Buttons and links:** Open a game, Open the team, Copy link
+- **Rules:**
+  - The page has its own link that can be shared (FR-011).
+  - Do not show the email or the phone of the player (FR-014).
+  - If the player has no stats, show a clear message (FR-016).
+- **Related:** US-14.6, US-14.12, FR-006, FR-011, FR-014, FR-016
+
+### SCR-14.8: Game page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The teams, date, time, location (with address and map link), the result, and the stats of each player
+- **Buttons and links:** Open a team, Open a player, Copy link
+- **Rules:**
+  - The page has its own link that can be shared (FR-011).
+  - When the result is Disputed, show "Result under review" and no score (FR-010).
+  - A cancelled or moved game shows the reason (FR-009).
+  - If the game has no result yet, show a clear message (FR-016).
+  - Do not show ref pay (FR-014).
+- **Related:** US-14.7, US-14.12, FR-006, FR-009, FR-010, FR-011, FR-014, FR-016
+
+### SCR-14.9: Leaders page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The leaders of a league for each stat type, for example the top scorers in order
+- **Buttons and links:** Open a player
+- **Rules:**
+  - Show the leaders for each league (FR-007).
+  - If there are no stats yet, show a clear message (FR-016).
+- **Related:** US-14.8, FR-007, FR-016
+
+### SCR-14.10: Search page
+
+- **Who can open it:** Everyone (no login needed)
+- **Fields:** Search box (search by name)
+- **Content:** A list of matching teams and a list of matching players
+- **Buttons and links:** Open a team, Open a player, Clear search
+- **Rules:**
+  - Search finds teams and players by part of the name (FR-008).
+  - If nothing is found, show "Nothing found" and a way to clear the search (FR-017).
+  - Do not show the email or the phone of any player (FR-014).
+- **Related:** US-14.9, FR-008, FR-014, FR-017
+
+### SCR-14.11: Manage announcements page
+
+- **Who can open it:** Owner only
+- **Content:** A list of announcements with these columns: Title, Start date, End date, Record state
+- **Fields:** Title (required), Message (required), Start date (required), End date (optional)
+- **Buttons and links:** Add announcement, Edit, Make inactive / Make active, Delete, Save, Cancel
+- **Rules:**
+  - The owner can post announcements and sponsor messages for the home page (FR-012).
+  - If a required field is empty, do not save the announcement.
+  - Managers, refs and the public cannot open this page (FR-018).
+- **Related:** US-14.10, FR-012, FR-018
+
+### SCR-14.12: Manage visibility page
+
+- **Who can open it:** Owner only
+- **Content:** A list of the leagues and seasons with these columns: Name, Type (League or Season), Visible to the public (Yes or No)
+- **Buttons and links:** Hide, Show
+- **Rules:**
+  - The owner can hide a league or a season from the public (FR-013).
+  - A hidden league or season does not appear on any public page. All data stays in the system.
+  - Managers, refs and the public cannot open this page (FR-018).
+- **Related:** US-14.11, FR-013, FR-018
+
+### Rules for all screens
+
+- Every public screen MUST work well on a phone (FR-019).
+- Public screens need no login and show no edit buttons (FR-001).
+- Public screens MUST NOT show emails, phone numbers or ref pay (FR-014).
+- Past seasons MUST stay visible (FR-015).
+- Error messages MUST be short and clear. A page with nothing to show uses a clear message, not an error (FR-016).
+
+-----
+
 ## Key Entities
 
 - **Public page** — A page that anyone can open without login.

@@ -132,6 +132,97 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-15.1: Send email page
+
+- **Who can open it:** Owner (any group) and manager (own team players only)
+- **Fields:** Send to (required), Template (choose Game reminder, Schedule, Cancelled game, Ref assignment or Free message), Game (required when the template needs game details), Subject (required), Message (required)
+- **Buttons and links:** Preview, Cancel
+- **Rules:**
+  - The owner can send to refs, managers or players, and to everyone in a group, one league or one team (FR-001).
+  - A manager can choose only the players of their own team (FR-002).
+  - A template fills in the game details: date, time, location and teams (FR-003). For example, a game at "Field 2" at 6 PM shows the date, 6 PM, "Field 2" and the teams.
+  - The owner can write a free message about anything (FR-004).
+  - If a required field is empty, do not go to the preview.
+  - Refs and the public cannot open this page (FR-014).
+- **Related:** US-15.1, US-15.2, US-15.3, US-15.4, US-15.5, FR-001, FR-002, FR-003, FR-004, FR-014
+
+### SCR-15.2: Email preview page
+
+- **Who can open it:** Owner and manager (the same person who wrote the message)
+- **Content:** The subject and the message as the people will see them, the number of people who will get it, and the list of people who cannot get it (no email or not a valid email)
+- **Buttons and links:** Send, Back to edit
+- **Rules:**
+  - Show a preview and the number of people before sending (FR-005).
+  - Check that each person has a valid email. List the people who will not get the message (FR-006).
+  - Nothing is sent until the user clicks Send.
+  - After sending, save the message in the email history (FR-013).
+- **Related:** US-15.3, US-15.6, FR-005, FR-006, FR-013
+
+### SCR-15.3: Email history page
+
+- **Who can open it:** Owner only
+- **Content:** A table of the sent messages with these columns: Date, Group, Subject, Number sent, Number failed
+- **Buttons and links:** View details
+- **Rules:**
+  - Show the date, group, subject and number sent of each message (FR-013).
+  - For example, a message to 10 people with 1 failed email shows 9 sent and 1 failed.
+  - If there are no messages, show "No emails sent yet".
+- **Related:** US-15.10, FR-013
+
+### SCR-15.4: Email details page
+
+- **Who can open it:** Owner only
+- **Content:** The message (subject, group, date) and a table of the recipients with these columns: Email, Status (Sent or Failed), Failure reason
+- **Buttons and links:** Show only failed, Back to history
+- **Rules:**
+  - Show the list of failed emails with the failed address and the reason (FR-013).
+- **Related:** US-15.10, FR-013
+
+### SCR-15.5: Email settings page
+
+- **Who can open it:** Owner only
+- **Fields:** Game reminders (On or Off), Hours before the game (shown as 24)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - The system sends a reminder 24 hours before each game. The owner can turn the reminders on or off (FR-007).
+  - When reminders are off, the system sends no reminder.
+  - Turning reminders off does not stop game change emails (FR-009).
+  - The system does not send the same reminder twice to the same person for the same game (FR-008).
+- **Related:** US-15.7, FR-007, FR-008
+
+### SCR-15.6: Turn off reminders page (player)
+
+- **Who can open it:** A player with the link from a reminder email (no login needed)
+- **Content:** A short message such as "Do you want to stop reminder emails?"
+- **Buttons and links:** Turn off reminders
+- **Rules:**
+  - Every reminder email has a link to this page, because players do not have an account (FR-012).
+  - After the player turns off reminders, the player gets no more reminders (FR-011).
+  - The player still gets game change emails: moved, cancelled or changed location (FR-011).
+  - The page works on a phone (FR-015).
+- **Related:** US-15.11, FR-011, FR-012
+
+### SCR-15.7: Ref assignment answer page
+
+- **Who can open it:** Ref (login needed), from the link in the assignment email
+- **Content:** The game details (date, time, location, teams)
+- **Buttons and links:** Confirm, Decline
+- **Rules:**
+  - The assignment email has a link to confirm or decline the game (FR-010).
+  - A ref can answer only their own assignment. An answer for another ref's game is rejected.
+  - After the ref answers, the owner sees the assignment status (Confirmed or Declined), as in the ref assignment feature.
+- **Related:** US-15.9, FR-010
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-015).
+- Only the owner and the managers can send emails. Refs and the public MUST be rejected (FR-014).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Email message** — A message sent to one or more people.

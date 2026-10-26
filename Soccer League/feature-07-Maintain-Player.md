@@ -98,6 +98,115 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-7.1: Roster page
+
+- **Who can open it:** Manager (own team only) and owner (any team)
+- **Content:** A table of the players of a team with these columns: Jersey number, Name, Position, Record state, Totals (stats of the player)
+- **Fields:** Team (owner only, choose a team)
+- **Buttons and links:** Add player, View, Edit, Remove, Move to another team (owner only)
+- **Rules:**
+  - A manager sees only the roster of their own team (FR-015).
+  - The owner can open the roster of any team (FR-015).
+  - Show the totals of each player (US-7.4).
+  - Players with the state Inactive are marked as Inactive.
+  - Other roles cannot open this page.
+- **Related:** US-7.1, US-7.2, US-7.3, US-7.4, FR-006, FR-015
+
+### SCR-7.2: Add player page
+
+- **Who can open it:** Manager (own team only) and owner (any team)
+- **Fields:** Team (required. A manager sees only their own team. The owner can choose a team), Name (required), Jersey number (required), Position (optional), Email (optional), Phone (optional)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - Reject a jersey number that is already used in the same team (FR-008).
+  - Reject the player if the team already has the league maximum number of players (FR-009).
+  - If a player with the same email already exists, show a warning (FR-010).
+  - If the player is already active on another team of the same league, reject the player and tell the manager to ask the owner to move the player (FR-012).
+  - After saving, the player is on the roster.
+- **Related:** US-7.1, FR-003, FR-007, FR-008, FR-009, FR-010, FR-012, FR-015
+
+### SCR-7.3: Edit player page
+
+- **Who can open it:** Manager (own team only) and owner (any team)
+- **Fields:** Name (required), Jersey number (required), Position (optional), Email (optional), Phone (optional)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the player when the page opens.
+  - If a required field is removed, do not save the change (FR-007).
+  - Reject a jersey number that is already used in the same team (FR-008).
+  - If a player with the same email already exists, show a warning (FR-010).
+  - A manager who opens a player of another team is rejected (FR-015).
+- **Related:** US-7.2, FR-004, FR-007, FR-008, FR-010, FR-015
+
+### SCR-7.4: Remove player confirm message
+
+- **Who can open it:** Manager (own team only) and owner (any team). Shown after the user clicks Remove.
+- **Content:** The player name and a question such as "Do you want to remove this player?"
+- **Buttons and links:** Confirm remove, Cancel
+- **Rules:**
+  - Removing only makes the player Inactive. The player is not deleted (FR-011).
+  - The old game stats of the player stay in the records (FR-011).
+  - If the player does not exist, reject the operation.
+- **Related:** US-7.3, FR-005, FR-011, FR-015
+
+### SCR-7.5: Move player page
+
+- **Who can open it:** Owner only
+- **Fields:** New team (required), Jersey number (required, starts with the current number)
+- **Buttons and links:** Move player, Cancel
+- **Rules:**
+  - Show the current team of the player when the page opens.
+  - After the move, the player is on the roster of the new team (FR-013).
+  - Old stats stay with the old team (FR-013).
+  - The jersey number must be unique in the new team (FR-008).
+  - Reject the move if the new team already has the league maximum number of players (FR-009).
+  - The player must not be active on two teams of the same league (FR-012).
+- **Related:** US-7.5, FR-008, FR-009, FR-012, FR-013
+
+### SCR-7.6: Search players page
+
+- **Who can open it:** Owner only
+- **Fields:** Search box (search by player name)
+- **Content:** A list of matching players with these columns: Name, Jersey number, Team, Record state
+- **Buttons and links:** View
+- **Rules:**
+  - Search finds players by part of the name across the league (FR-014).
+  - If nothing is found, show "No player found".
+- **Related:** US-7.6, FR-014
+
+### SCR-7.7: View player page
+
+- **Who can open it:** Manager (own team only) and owner (any team)
+- **Content:** Player information (Name, Team, Jersey number, Position, Email, Phone, Record state), totals, and the stats of each game
+- **Buttons and links:** Edit, Remove, Back to roster
+- **Rules:**
+  - Show the information as read only.
+  - A manager sees only players of their own team (FR-015).
+- **Related:** US-7.4, FR-006, FR-015
+
+### SCR-7.8: Public player page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The player name, team, and the stats of each game
+- **Buttons and links:** Back to team
+- **Rules:**
+  - Show only the name, team and stats (FR-016).
+  - Do not show the email or the phone (FR-016).
+  - Do not show any edit buttons.
+  - Do not ask for login.
+- **Related:** US-7.7, FR-016
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-017).
+- A manager can change information only on their own team. The owner can change information on any team. Other roles MUST be rejected (FR-015).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Player** — A person who plays for a team.

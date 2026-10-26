@@ -111,6 +111,130 @@
 
 -----
 
+## Screen Requirements
+
+### SCR-4.1: Season list page
+
+- **Who can open it:** Owner only
+- **Content:** A table of seasons with these columns: Name, League, Start date, End date, Status, Record state
+- **Fields:** League filter (choose a league or All leagues)
+- **Buttons and links:** Add season, View, Edit, Delete
+- **Rules:**
+  - When the owner chooses a league, show only the seasons of that league.
+  - Seasons with the state Deleted are not shown in the list.
+  - Other roles cannot open this page (FR-018).
+- **Related:** US-4.4, US-4.5, FR-006, FR-012, FR-018
+
+### SCR-4.2: Add season page
+
+- **Who can open it:** Owner only
+- **Fields:** League (required), Name (required), Start date (required), End date (required)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - If a required field is empty, do not save and show which field is missing (FR-007).
+  - The end date must be after the start date (FR-009).
+  - Reject a season whose dates overlap another season of the same league (FR-010).
+  - When the owner clicks Save, show a confirm message before saving (FR-020).
+  - A new season starts with the status Planned.
+- **Related:** US-4.1, FR-003, FR-007, FR-008, FR-009, FR-010, FR-020
+
+### SCR-4.3: Edit season page
+
+- **Who can open it:** Owner only
+- **Fields:** Name (required), Start date (required), End date (required)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current information of the season when the page opens.
+  - The end date must be after the start date (FR-009).
+  - Reject dates that overlap another season of the same league (FR-010).
+  - If a game would be outside the new dates, do not save the change and show a message (FR-011).
+  - When the owner clicks Save, show a confirm message before saving (FR-020).
+- **Related:** US-4.2, FR-004, FR-009, FR-010, FR-011, FR-020
+
+### SCR-4.4: View season page
+
+- **Who can open it:** Owner only
+- **Content:** Season information (League, Name, Start date, End date, Status) and a summary with three numbers: Total games, Games played, Games left
+- **Buttons and links:** Edit, Change status, Close season, Reopen season, Delete, Back to list
+- **Rules:**
+  - Show the summary numbers (FR-016). For example, 30 games with 12 played shows 30 total, 12 played and 18 left.
+  - Show Close season only when the status is not Completed.
+  - Show Reopen season only when the status is Completed.
+  - A Completed season is locked. Managers cannot change its results (FR-013).
+- **Related:** US-4.4, US-4.5, US-4.6, US-4.7, FR-013, FR-016
+
+### SCR-4.5: Change status page
+
+- **Who can open it:** Owner only
+- **Fields:** Status (choose Planned, In Progress or Completed)
+- **Buttons and links:** Save, Cancel
+- **Rules:**
+  - Show the current status when the page opens.
+  - Choosing Completed locks the season. Show a short warning that managers will not be able to change results (FR-013).
+  - After saving, show the new status on the season page.
+  - When the owner clicks Save, show a confirm message before saving (FR-020).
+- **Related:** US-4.5, US-4.6, FR-012, FR-013, FR-020
+
+### SCR-4.6: Reopen season confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Reopen season)
+- **Content:** The season name and a question such as "Do you want to reopen this season?"
+- **Buttons and links:** Confirm reopen, Cancel
+- **Rules:**
+  - Only the owner can reopen a season. A manager is rejected (FR-013).
+  - After reopen, the season status changes and results can be changed again.
+- **Related:** US-4.7, FR-013
+
+### SCR-4.7: Delete confirm message
+
+- **Who can open it:** Owner only (shown after the owner clicks Delete)
+- **Content:** The season name and a question such as "Do you want to delete this season?"
+- **Buttons and links:** Confirm delete, Cancel
+- **Rules:**
+  - If the season has games, reject the delete and show a message. The season and its games stay unchanged (FR-014).
+  - If the season has no games, change the record state to Deleted (soft delete). Do not remove the data (FR-015).
+- **Related:** US-4.3, FR-005, FR-014, FR-015
+
+### SCR-4.8: Confirm save message
+
+- **Who can open it:** Owner only (shown after the owner clicks Save on SCR-4.2, SCR-4.3 or SCR-4.5)
+- **Content:** A short question such as "Do you want to save this change?"
+- **Buttons and links:** Confirm, Cancel
+- **Rules:**
+  - Nothing is saved until the owner clicks Confirm (FR-020).
+  - Cancel returns the owner to the form with the information still filled in.
+- **Related:** FR-020
+
+### SCR-4.9: Public season list (on the league page)
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The seasons of the league. Each season shows its name, dates and status.
+- **Buttons and links:** Open a season
+- **Rules:**
+  - Show the current season first, then the past seasons (US-4.8).
+  - Past seasons stay in the list with their games and results (FR-017).
+  - Do not show any edit buttons.
+  - Do not ask for login.
+- **Related:** US-4.8, FR-017
+
+### SCR-4.10: Public season page
+
+- **Who can open it:** Everyone (no login needed)
+- **Content:** The season name, dates, status, and its games and results
+- **Buttons and links:** Back to league
+- **Rules:**
+  - Do not show any edit buttons.
+  - Do not show a season with the state Deleted.
+- **Related:** US-4.8, FR-017
+
+### Rules for all screens
+
+- Every screen MUST work on an office computer and on a phone (FR-019).
+- Only the owner can change information. Other roles MUST be rejected (FR-018).
+- Error messages MUST be short and clear.
+
+-----
+
 ## Key Entities
 
 - **Season** — A period when a league plays its games, for example Fall 2026.
