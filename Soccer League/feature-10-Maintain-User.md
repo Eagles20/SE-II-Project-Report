@@ -43,7 +43,7 @@
 **As an** owner  
 **I want to** delete a user who never did anything in the system  
 **So that** wrong accounts can be removed.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Delete an unused user and verify that the user is no longer active.  
 **Acceptance Scenarios:** see ### US-10.4 under Gherkin AC
 
@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** filter users by role, search by name or email, and see the last login  
 **So that** I can find people and see who is active.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Filter by role and verify that only those users are shown.  
 **Acceptance Scenarios:** see ### US-10.5 under Gherkin AC
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** reset the password of another user  
 **So that** I can help someone who is locked out.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Reset a password and verify that a temporary password is sent.  
 **Acceptance Scenarios:** see ### US-10.6 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As a** manager  
 **I want to** edit my own name, phone and email  
 **So that** my details stay right.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Edit own details and verify that the role cannot be changed.  
 **Acceptance Scenarios:** see ### US-10.8 under Gherkin AC
 
@@ -100,13 +100,13 @@
 - **FR-011:** A user MUST have a record state (Active, Inactive or Deleted). An Inactive user MUST NOT be able to log in.
 - **FR-012:** The system MUST NOT make inactive or delete the last active owner.
 - **FR-013:** The system MUST NOT delete a user who did something in the system. The owner can make the user inactive instead.
-- **FR-014:** Deleting a user MUST be a soft delete (record state Deleted), so other features keep the original user information.
+- **FR-014:** Deleting a user MUST be a soft delete so, other features keep the original user information.
 - **FR-015:** The system MUST let the owner reset the password of another user.
 - **FR-016:** The system MUST NOT change the role of a manager who is linked to a team, or of a ref who is linked to a ref record, until the link is removed.
 - **FR-017:** The system MUST keep a history of changes to users (who, when, what), including role changes, making a user inactive, and password resets.
 - **FR-018:** The system MUST let the owner filter users by role, search by name or email, and see the last login.
 - **FR-019:** A manager or a ref MUST be able to edit their own name, phone and email, and MUST NOT be able to change their own role.
-- **FR-020:** The system MUST let the owner use this feature (main user: owner), and MUST NOT let other roles change other users.
+- **FR-020:** The system MUST let the owner use this feature  and MUST NOT let other roles change other users.
 - **FR-021:** The system MUST work on an office computer and on a phone.
 - **FR-022:** This feature is not used very often, so the system MUST ask the user to confirm before saving a change.
 
