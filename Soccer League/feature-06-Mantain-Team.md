@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** change the manager of a team  
 **So that** I can replace a manager who leaves.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Change a manager and verify the access change.  
 **Acceptance Scenarios:** see ### US-6.5 under Gherkin AC
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** make a team inactive  
 **So that** it stops appearing in new schedules but keeps its history.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Make a team inactive and verify that the schedule generator skips it.  
 **Acceptance Scenarios:** see ### US-6.6 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As an** owner  
 **I want to** see teams with no manager or too few players  
 **So that** I can fix them before the season starts.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open the team list and verify that the warnings are shown.  
 **Acceptance Scenarios:** see ### US-6.7 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As a** person from the public  
 **I want to** open a team page and search teams by name  
 **So that** I can follow my team.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open a public team page and verify that players, games and record are shown.  
 **Acceptance Scenarios:** see ### US-6.8 under Gherkin AC
 
