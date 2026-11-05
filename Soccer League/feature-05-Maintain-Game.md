@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** postpone a game and set a new date later  
 **So that** the game is not lost.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Postpone a game and verify that its status changes.  
 **Acceptance Scenarios:** see ### US-5.5 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As a** manager  
 **I want to** view the games of my team  
 **So that** I can prepare my players.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Log in as a manager and verify that only the team games are shown.  
 **Acceptance Scenarios:** see ### US-5.8 under Gherkin AC
 
@@ -88,7 +88,7 @@
 **As a** person from the public  
 **I want to** see upcoming games and cancelled games with the reason  
 **So that** I can go and watch and I do not travel for nothing.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open the public schedule and verify that games and reasons are shown.  
 **Acceptance Scenarios:** see ### US-5.9 under Gherkin AC
 
