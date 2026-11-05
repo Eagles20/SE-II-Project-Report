@@ -51,9 +51,9 @@
 
 **As an** owner  
 **I want to** move a player to another team  
-**So that** transfers are recorded without losing the old stats.  
-**Priority:** P2  
-**Independent test:** Move a player and verify that old stats stay with the old team.  
+**So that** transfers are recorded without losing the old status.  
+**Priority:** P1  
+**Independent test:** Move a player and verify that old status stay with the old team.  
 **Acceptance Scenarios:** see ### US-7.5 under Gherkin AC
 
 ### US-7.6: Search players
@@ -61,16 +61,16 @@
 **As an** owner  
 **I want to** search players by name across the league  
 **So that** I can find anyone fast.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Search a player name and verify that the player is found.  
 **Acceptance Scenarios:** see ### US-7.6 under Gherkin AC
 
 ### US-7.7: Public views players
 
 **As a** person from the public  
-**I want to** open a player page with stats  
+**I want to** open a player page with status  
 **So that** family and friends can follow the player.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open a public player page and verify that stats show and contact details do not.  
 **Acceptance Scenarios:** see ### US-7.7 under Gherkin AC
 
