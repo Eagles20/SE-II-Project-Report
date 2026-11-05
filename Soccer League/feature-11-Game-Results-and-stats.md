@@ -130,7 +130,7 @@
 - **FR-014:** The system MUST keep results and stats forever, so records are never lost.
 - **FR-015:** The system MUST update each player's totals and the team standings (wins, losses, ties) from the results.
 - **FR-016:** The system MUST build leader lists (for example top scorers) from the stats.
-- **FR-017:** The system MUST let the owner and the managers use this feature (main user: manager), and MUST NOT let a ref or the public change results or stats.
+- **FR-017:** The system MUST let the owner and the managers use this feature or the public change results or stats.
 - **FR-018:** The system MUST work on a phone, so a manager can enter a score at the field, and on an office computer.
 
 -----
