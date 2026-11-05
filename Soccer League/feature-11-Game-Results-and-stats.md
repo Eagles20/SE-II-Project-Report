@@ -34,7 +34,7 @@
 **As a** manager  
 **I want to** enter a forfeit when a team did not show up  
 **So that** the result is correct without playing.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Enter a forfeit and verify the winner.  
 **Acceptance Scenarios:** see ### US-11.3 under Gherkin AC
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** see who changed a result or stat and when  
 **So that** changes are clear.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Change a score and verify that the history shows it.  
 **Acceptance Scenarios:** see ### US-11.6 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As a** manager  
 **I want to** mark a player as "did not play"  
 **So that** stats are not wrong.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Mark a player and verify that the player gets no stats.  
 **Acceptance Scenarios:** see ### US-11.8 under Gherkin AC
 
@@ -88,7 +88,7 @@
 **As a** manager  
 **I want to** see my finished games that have no result  
 **So that** I do not forget to enter them.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Open the list and verify that it shows the games.  
 **Acceptance Scenarios:** see ### US-11.9 under Gherkin AC
 
