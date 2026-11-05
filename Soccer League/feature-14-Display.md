@@ -70,7 +70,7 @@
 **As a** person from the public  
 **I want to** open a game page with the result and player stats  
 **So that** all game information is in one place.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open a finished game and verify the content.  
 **Acceptance Scenarios:** see ### US-14.7 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As a** person from the public  
 **I want to** see the leaders of a league  
 **So that** I can follow the best players.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open the leaders page and verify the order.  
 **Acceptance Scenarios:** see ### US-14.8 under Gherkin AC
 
@@ -88,7 +88,7 @@
 **As a** person from the public  
 **I want to** search teams and players by name  
 **So that** I find my team or my child fast.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Search a name and verify the result.  
 **Acceptance Scenarios:** see ### US-14.9 under Gherkin AC
 
@@ -97,7 +97,7 @@
 **As an** owner  
 **I want to** post announcements and sponsor messages on the home page  
 **So that** the league can advertise and share news.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Post an announcement and verify that it is shown.  
 **Acceptance Scenarios:** see ### US-14.10 under Gherkin AC
 
@@ -106,7 +106,7 @@
 **As an** owner  
 **I want to** hide a league or a season from the public  
 **So that** something that is not ready stays private.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Hide a league and verify that the public cannot see it.  
 **Acceptance Scenarios:** see ### US-14.11 under Gherkin AC
 
@@ -115,7 +115,7 @@
 **As a** person from the public  
 **I want to** copy the link of a page and print the schedule  
 **So that** I can share with family and keep a paper copy.  
-**Priority:** P3  
+**Priority:** P1 
 **Independent test:** Copy a team page link and open it on another phone.  
 **Acceptance Scenarios:** see ### US-14.12 under Gherkin AC
 
@@ -129,7 +129,7 @@
 - **FR-004:** The system MUST show the schedule of a season and MUST let the public filter it by team, date and location.
 - **FR-005:** The system MUST show the standings of each season (wins, losses, ties).
 - **FR-006:** The system MUST have a team page (players, games, record), a player page (stats for each game and season total) and a game page (teams, date, time, location, result, player stats).
-- **FR-007:** The system MUST show leaders (for example top scorers) for each league.
+- **FR-007:** The system MUST show leaders (for example top scorers "Christian Ronald") for each league.
 - **FR-008:** The system MUST let the public search teams and players by name.
 - **FR-009:** The system MUST show cancelled and moved games with the reason.
 - **FR-010:** The system MUST show "Result under review" instead of the score when a result is Disputed.
