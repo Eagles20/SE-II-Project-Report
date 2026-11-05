@@ -34,7 +34,7 @@
 **As an** owner  
 **I want to** enter dates when a team cannot play  
 **So that** the system does not put a game on those days.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Add a blackout date and verify that the team has no game on it.  
 **Acceptance Scenarios:** see ### US-12.3 under Gherkin AC
 
@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** edit one game in the preview  
 **So that** I can fix small things without starting over.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Change a game time in the preview and verify that it is kept.  
 **Acceptance Scenarios:** see ### US-12.5 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As an** owner  
 **I want to** generate again with new settings or delete a generated schedule  
 **So that** I can try other options.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Delete a draft schedule and verify that the games are removed.  
 **Acceptance Scenarios:** see ### US-12.7 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As an** owner  
 **I want to** see games per team, per location and per ref  
 **So that** I can check that the schedule is fair.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Generate a schedule and verify that the summary is shown.  
 **Acceptance Scenarios:** see ### US-12.8 under Gherkin AC
 
@@ -96,7 +96,7 @@
 
 ## Functional Requirements
 
-- **FR-001:** The system MUST let the owner choose a season and start "Generate schedule".
+- **FR-001:** The system MUST let the owner choose a season and start Generate schedule.
 - **FR-002:** The system MUST let the owner choose the days and times when games can be played, the locations and fields to use, and the refs who are available.
 - **FR-003:** The system MUST let the owner enter blackout dates for a team, and MUST NOT put a game for that team on those dates.
 - **FR-004:** The system MUST create games so that each active team plays the number of games set in the league.
@@ -114,7 +114,7 @@
 - **FR-016:** The system MUST let the owner save a schedule that has games marked Needs ref, and MUST warn the owner before publishing it.
 - **FR-017:** The system MUST ask the owner to confirm before saving or publishing the schedule.
 - **FR-018:** The system MUST keep a history of the schedule (generated, published, deleted) with who and when.
-- **FR-019:** The system MUST let the owner use this feature (main user: owner), and MUST NOT let other roles generate a schedule.
+- **FR-019:** The system MUST let the owner use this feature  and MUST NOT let other roles generate a schedule.
 - **FR-020:** The system MUST work on an office computer.
 
 -----
