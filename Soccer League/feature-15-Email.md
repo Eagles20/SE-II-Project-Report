@@ -43,7 +43,7 @@
 **As a** manager  
 **I want to** email only the players of my own team  
 **So that** I can send reminders without asking the owner.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Send a message as a manager and verify the recipients.  
 **Acceptance Scenarios:** see ### US-15.4 under Gherkin AC
 
@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** use ready templates or write a free message  
 **So that** I save time and can send any news.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Choose a template and verify that the game details are filled in.  
 **Acceptance Scenarios:** see ### US-15.5 under Gherkin AC
 
@@ -88,7 +88,7 @@
 **As a** ref  
 **I want to** get an email when I am assigned to a game, with a link to confirm or decline  
 **So that** I can answer fast.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Assign a ref and verify that the email has the link.  
 **Acceptance Scenarios:** see ### US-15.9 under Gherkin AC
 
@@ -97,7 +97,7 @@
 **As an** owner  
 **I want to** see the history of sent emails and the list of failed ones  
 **So that** I know who did not get the message.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open the history and verify that failed emails are listed.  
 **Acceptance Scenarios:** see ### US-15.10 under Gherkin AC
 
@@ -106,7 +106,7 @@
 **As a** player  
 **I want to** turn off reminder emails but still get game changes  
 **So that** I am not annoyed by reminders.  
-**Priority:** P3  
+**Priority:** P1 
 **Independent test:** Turn off reminders and verify that game changes still arrive.  
 **Acceptance Scenarios:** see ### US-15.11 under Gherkin AC
 
