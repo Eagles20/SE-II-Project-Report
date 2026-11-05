@@ -3,7 +3,7 @@
 **Feature ID:** 3  
 **Branch pattern:** `feature/3-maintain-league`  
 **Status:** Draft  
-**Created:** 2026-10-21  
+**Created:** 2026-10-19  
 **Input:** Maintain leagues under a sport.  
 **Depends on:** [Feature 2 — Maintain-Sport](feature-2-Maintain-Sport.md)
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** copy the settings of a league into a new league  
 **So that** I do not enter the same settings again each season.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Copy a league and verify that the settings are copied without teams.  
 **Acceptance Scenarios:** see ### US-3.6 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As an** owner  
 **I want to** make a league inactive  
 **So that** old records stay but the league is hidden from the public.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Make a league inactive and verify that the public cannot see it.  
 **Acceptance Scenarios:** see ### US-3.7 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As an** owner  
 **I want to** filter leagues by sport  
 **So that** I can find the league I need.  
-**Priority:** P3  
+**Priority:** P1 
 **Independent test:** Filter by a sport and verify that only its leagues are shown.  
 **Acceptance Scenarios:** see ### US-3.8 under Gherkin AC
 
@@ -88,7 +88,7 @@
 **As a** person from the public  
 **I want to** browse leagues by sport and open a league page  
 **So that** I can follow the league.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Open a public league page and verify seasons and teams are shown.  
 **Acceptance Scenarios:** see ### US-3.9 under Gherkin AC
 
@@ -108,7 +108,7 @@
 - **FR-010:** A league MUST have a minimum and a maximum number of players per team.
 - **FR-011:** The system MUST NOT delete a league that has teams or seasons.
 - **FR-012:** Deleting a league MUST be a soft delete (record state Deleted), so other features keep the original league information.
-- **FR-013:** A league MUST have a record state (Active, Inactive or Deleted, see shared/GLOSSARY.md). Inactive leagues MUST be hidden from the public but all data MUST stay.
+- **FR-013:** A league MUST have a record state (Active, Inactive or Deleted). Inactive leagues MUST be hidden from the public but all data MUST stay.
 - **FR-014:** The system MUST let the owner copy a league. The copy MUST keep the settings but MUST NOT copy teams, seasons or games.
 - **FR-015:** The system MUST let the owner filter leagues by sport.
 - **FR-016:** The system MUST let the owner use this feature (main user: owner), and MUST NOT let other roles change its information.
