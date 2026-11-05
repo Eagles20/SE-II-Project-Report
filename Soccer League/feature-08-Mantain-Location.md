@@ -43,7 +43,7 @@
 **As a** person from the public  
 **I want to** see the name, address and a map link of a game location  
 **So that** I can find the place easily.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open a game page and verify that the address and map link are shown.  
 **Acceptance Scenarios:** see ### US-8.4 under Gherkin AC
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** block dates for a location  
 **So that** no game is placed there when it cannot be used.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Block a date and verify that games cannot be placed there.  
 **Acceptance Scenarios:** see ### US-8.6 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As an** owner  
 **I want to** see the games at a location on a date  
 **So that** I can plan the day.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Open a location day view and verify the games are listed.  
 **Acceptance Scenarios:** see ### US-8.7 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As an** owner  
 **I want to** make a location inactive when it is closed  
 **So that** it is not used for new games.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Make a location inactive and verify that it cannot be chosen.  
 **Acceptance Scenarios:** see ### US-8.8 under Gherkin AC
 
@@ -100,10 +100,10 @@
 - **FR-011:** The system MUST NOT use a blocked date or an Inactive location for a new game.
 - **FR-012:** The system MUST warn the owner when a location with future games is made inactive.
 - **FR-013:** The system MUST NOT delete a location that is used by games or teams.
-- **FR-014:** Deleting a location MUST be a soft delete (record state Deleted), so other features keep the original location information.
+- **FR-014:** Deleting a location MUST be a soft delete so, other features keep the original location information.
 - **FR-015:** The system MUST show the owner the games at a location on a date.
 - **FR-016:** The public game page MUST show the address and a map link.
-- **FR-017:** The system MUST let the owner use this feature (main user: owner), and MUST NOT let other roles change its information.
+- **FR-017:** The system MUST let the owner use this feature  and MUST NOT let other roles change its information.
 - **FR-018:** The system MUST work on an office computer and on a phone.
 - **FR-019:** This feature is not used very often, so the system MUST ask the user to confirm before saving a change.
 
