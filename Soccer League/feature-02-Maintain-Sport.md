@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** make a sport inactive instead of deleting it  
 **So that** old records stay but the sport is hidden from the public.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Make a sport inactive and verify that the public cannot see it.  
 **Acceptance Scenarios:** see ### US-2.5 under Gherkin AC
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** search sports by name  
 **So that** I can find a sport fast.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Search for a sport name and verify that it is found.  
 **Acceptance Scenarios:** see ### US-2.6 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As a** person from the public  
 **I want to** see the active sports and their leagues  
 **So that** I can find the league I care about.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open the public sports page and verify that active sports are shown without edit buttons.  
 **Acceptance Scenarios:** see ### US-2.7 under Gherkin AC
 
@@ -78,7 +78,7 @@
 
 ## Functional Requirements
 
-- **FR-001:** The system MUST maintain sports (for example flag football, softball, basketball, soccer).
+- **FR-001:** The system MUST maintain sports (for example soccer).
 - **FR-002:** Each sport MUST have a unique identifier.
 - **FR-003:** The system MUST allow authorized users to add sports.
 - **FR-004:** The system MUST allow authorized users to edit sports.
