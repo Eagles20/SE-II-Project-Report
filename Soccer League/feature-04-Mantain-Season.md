@@ -4,6 +4,7 @@
 **Branch pattern:** `feature/4-maintain-season`  
 **Status:** Draft  
 **Created:** 2026-10-19
+
 **Input:** Maintain seasons  for a league.  
 **Depends on:** [Feature 3 — Maintain-League](feature-2-Maintain-League.md)
 
@@ -53,7 +54,7 @@
 **As an** owner  
 **I want to** set the season status to Planned, In Progress or Completed  
 **So that** everyone knows where the season is.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Change the status and verify that it is shown.  
 **Acceptance Scenarios:** see ### US-4.5 under Gherkin AC
 
@@ -62,7 +63,7 @@
 **As an** owner  
 **I want to** close a season  
 **So that** managers cannot change results after the season ends.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Close a season and verify that managers cannot change results.  
 **Acceptance Scenarios:** see ### US-4.6 under Gherkin AC
 
@@ -71,7 +72,7 @@
 **As an** owner  
 **I want to** reopen a closed season  
 **So that** I can fix a mistake in old records.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Reopen a season and verify that results can be changed.  
 **Acceptance Scenarios:** see ### US-4.7 under Gherkin AC
 
@@ -80,7 +81,7 @@
 **As a** person from the public  
 **I want to** see the current season first and open past seasons  
 **So that** I can find new games and old results.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Open a league page and verify that current and past seasons are shown.  
 **Acceptance Scenarios:** see ### US-4.8 under Gherkin AC
 
