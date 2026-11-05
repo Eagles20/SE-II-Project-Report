@@ -34,7 +34,7 @@
 **As an** owner  
 **I want to** change the pay of one game  
 **So that** special cases like a bonus are correct.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Change a pay amount and verify the new amount owed.  
 **Acceptance Scenarios:** see ### US-13.3 under Gherkin AC
 
@@ -43,7 +43,7 @@
 **As an** owner  
 **I want to** undo a paid mark with a reason  
 **So that** I can fix a mistake.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Undo a paid mark and verify that the history keeps the reason.  
 **Acceptance Scenarios:** see ### US-13.4 under Gherkin AC
 
@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** choose if a cancelled game is paid or not  
 **So that** I can follow my own rule.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Cancel a game and choose Do not pay, then verify the amount owed.  
 **Acceptance Scenarios:** see ### US-13.5 under Gherkin AC
 
@@ -61,7 +61,7 @@
 **As an** owner  
 **I want to** build a pay report for a date range and filter payments  
 **So that** I can check my costs.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Build a report for a date range and verify the totals.  
 **Acceptance Scenarios:** see ### US-13.6 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As an** owner  
 **I want to** export the pay report to a CSV file  
 **So that** I can keep it or use it in a spreadsheet.  
-**Priority:** P3  
+**Priority:** P1  
 **Independent test:** Export a report and verify the CSV content.  
 **Acceptance Scenarios:** see ### US-13.7 under Gherkin AC
 
@@ -108,7 +108,7 @@
 - **FR-010:** When a report or a filter finds nothing, the system MUST show "No payments found" and amounts of 0, and MUST NOT show an error.
 - **FR-011:** The system MUST let a ref see only their own games, pay and pay history.
 - **FR-012:** The system MUST NOT show ref pay on the public pages.
-- **FR-013:** The system MUST let the owner use this feature (main user: owner), and MUST let a ref only view their own payments.
+- **FR-013:** The system MUST let the owner use this feature  and MUST let a ref only view their own payments.
 - **FR-014:** The system MUST work on an office computer and on a phone.
 
 -----
