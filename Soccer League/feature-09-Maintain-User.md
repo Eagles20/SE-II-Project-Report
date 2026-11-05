@@ -52,7 +52,7 @@
 **As an** owner  
 **I want to** set the sports and the available days and times of a ref  
 **So that** I schedule refs only when they can come.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Set availability and verify that it is saved.  
 **Acceptance Scenarios:** see ### US-9.5 under Gherkin AC
 
@@ -105,7 +105,7 @@
 - **FR-016:** Deleting a ref MUST be a soft delete (record state Deleted), so other features keep the original ref information.
 - **FR-017:** A ref MUST be able to view only their own games.
 - **FR-018:** Ref email and phone MUST NOT be shown on the public pages.
-- **FR-019:** The system MUST let the owner use this feature (main user: owner), and MUST let a ref confirm or decline only their own assignments.
+- **FR-019:** The system MUST let the owner use this feature  and MUST let a ref confirm or decline only their own assignments.
 - **FR-020:** The system MUST work on an office computer and on a phone.
 
 -----
