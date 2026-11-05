@@ -43,7 +43,7 @@
 **As an** owner  
 **I want to** unlock a locked account  
 **So that** a real user is not blocked for a long time.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Unlock a locked account and verify that the user can log in.  
 **Acceptance Scenarios:** see ### US-1.4 under Gherkin AC
 
@@ -70,7 +70,7 @@
 **As a** user  
 **I want to** change my password when I am logged in  
 **So that** I can keep it fresh.  
-**Priority:** P2  
+**Priority:** P1 
 **Independent test:** Change the password and verify that the new password works at the next login.  
 **Acceptance Scenarios:** see ### US-1.7 under Gherkin AC
 
@@ -79,7 +79,7 @@
 **As a** user  
 **I want to** be logged out after 30 minutes with no activity  
 **So that** nobody can use my account on a shared computer.  
-**Priority:** P2  
+**Priority:** P1  
 **Independent test:** Wait 30 minutes and verify that the next click needs login.  
 **Acceptance Scenarios:** see ### US-1.8 under Gherkin AC
 
@@ -481,7 +481,7 @@
   - After 30 minutes with no activity, the next click shows the login page.
 - **Related:** US-1.2, US-1.8, US-1.9, FR-010, FR-011
 
-### SCR-1.7: Unlock account (owner only)
+### SCR-1.7: Unlock account 
 
 - **Who can open it:** Owner only
 - **Content:** A list of user accounts with their status (Active, Inactive, Locked)
